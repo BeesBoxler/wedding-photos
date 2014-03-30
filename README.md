@@ -6,4 +6,4 @@ Website for Grit's wedding photos
 
 * WebUI
 * ~~Backend -> PHP or RoR?~~
-* DB/Storage?
+* DB/Storage? AWS?
