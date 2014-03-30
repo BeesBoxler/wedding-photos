@@ -1,0 +1,86 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-31 00:20:02 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 40ms
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:16:in `show'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-03-31 00:20:06 +0100
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:5:in `index'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.7ms)
+Connecting to database specified by database.yml
+  [1m[36m (28.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateUsers (20140330231942)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140330231942')[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/users" for 127.0.0.1 at 2014-03-31 00:20:37 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Warning. Error encountered while saving cache /Users/bentaylor/Dropbox/Grit/tmp/cache/sass/304074d62d71d1ef0cbe9f0da8090e9457d67861/scaffolds.css.scssc: can't dump anonymous class #<Class:0x007fc65226a230>
+Compiled scaffolds.css  (37ms)  (pid 48476)
+Warning. Error encountered while saving cache /Users/bentaylor/Dropbox/Grit/tmp/cache/sass/304074d62d71d1ef0cbe9f0da8090e9457d67861/users.css.scssc: can't dump anonymous class #<Class:0x007fc65226a230>
+Compiled users.css  (1ms)  (pid 48476)
+Compiled application.css  (52ms)  (pid 48476)
+Compiled jquery.js  (25ms)  (pid 48476)
+Compiled jquery_ujs.js  (0ms)  (pid 48476)
+Compiled users.js  (2019ms)  (pid 48476)
+Compiled application.js  (2104ms)  (pid 48476)
+Completed 200 OK in 2306ms (Views: 2292.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-31 00:20:39 +0100
+Served asset /scaffolds.css - 200 OK (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-31 00:20:39 +0100
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-31 00:20:39 +0100
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-31 00:20:39 +0100
+Served asset /users.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-31 00:20:39 +0100
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-31 00:20:39 +0100
+Served asset /users.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-31 00:20:39 +0100
+Served asset /application.js - 200 OK (5ms)
+Connecting to database specified by database.yml
