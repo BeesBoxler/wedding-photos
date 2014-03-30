@@ -2,7 +2,7 @@
 
 Website for Grit's wedding photos
 
-# TODO:
+## TODO:
 
 * WebUI
 * Backend -> PHP or RoR?
