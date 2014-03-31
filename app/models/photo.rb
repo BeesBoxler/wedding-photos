@@ -1,6 +1,5 @@
 class Photo < ActiveRecord::Base
-  # attr_accessible :title, :body
-
+  attr_accessible :image
   belongs_to :user
 
   has_attached_file :image, styles: {

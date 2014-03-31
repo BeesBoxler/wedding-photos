@@ -39,9 +39,9 @@ Grit::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['S3_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :bucket => 'grit-wedding',
+      :access_key_id => 'AKIAIY7LLBFZIVJXVVKQ',
+      :secret_access_key => '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'
     }
   }
 end
