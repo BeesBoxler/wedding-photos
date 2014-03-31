@@ -5,14 +5,14 @@ html, body{
 html{
 	position: relative;
 	min-height: 100%;
-	background: #0099ff;
-	background: -moz-linear-gradient(-45deg, #0099ff 0%, #0077c6 100%);
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#0099ff), color-stop(100%,#0077c6));
-	background: -webkit-linear-gradient(-45deg, #0099ff 0%,#0077c6 100%);
-	background: -o-linear-gradient(-45deg, #0099ff 0%,#0077c6 100%);
-	background: -ms-linear-gradient(-45deg, #0099ff 0%,#0077c6 100%);
-	background: linear-gradient(135deg, #0099ff 0%,#0077c6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0099ff', endColorstr='#0077c6',GradientType=1 );
+	background: #f9f9f9;
+	background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #dddddd 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f9f9f9), color-stop(100%,#dddddd));
+	background: -webkit-linear-gradient(-45deg, #f9f9f9 0%,#dddddd 100%);
+	background: -o-linear-gradient(-45deg, #f9f9f9 0%,#dddddd 100%);
+	background: -ms-linear-gradient(-45deg, #f9f9f9 0%,#dddddd 100%);
+	background: linear-gradient(135deg, #f9f9f9 0%,#dddddd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#dddddd',GradientType=1 );
 }
 
 body{
@@ -35,18 +35,18 @@ header nav a{
 	-webkit-border-radius: 5px;
 	text-align: center;
 	text-decoration: none;
-	color: #222222;
+	color: #f7f7f7;
 	font-weight: 300;
-	-webkit-box-shadow:0 0 5px 0 rgba(56,175,255,0.2), inset 0 0 5px 0 rgba(0,0,0,0.1);
-	box-shadow:0 0 5px 0 rgba(56,175,255,0.2), inset 0 0 5px 0 rgba(0,0,0,0.1);
+	-webkit-box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 3px 0 rgba(0,0,0,0.4);
+	box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 3px 0 rgba(0,0,0,0.4);
 	text-shadow: 1px 1px 1px #888;
 }
 
 header nav a:hover, header nav a:focus{
 	background: #007ACC;
-	-webkit-box-shadow:0 0 7px 0 rgba(56,175,255,0.3), inset 0 0 7px 0 rgba(0,0,0,0.2);
-	box-shadow:0 0 7px 0 rgba(56,175,255,0.3), inset 0 0 7px 0 rgba(0,0,0,0.2);
-	color: #000000;
+	-webkit-box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 3px 0 rgba(0,0,0,0.6);
+	box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 3px 0 rgba(0,0,0,0.6);
+	color: #ffffff;
 }
 
 h1{
@@ -55,7 +55,7 @@ h1{
 	display: block;
 	margin-top: 5%;
 	font-size: 4em;
-	text-shadow: 1px 1px 1px #777;
+	text-shadow: 1px 1px 1px #fff;
 }
 
 footer{
