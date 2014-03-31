@@ -28,8 +28,8 @@ header{
 header nav a{
 	display: inline-block;
 	float: right;
-	padding: 0.5% 1%;
 	margin: 10px 10px 0 0;
+	padding: 0.5% 1%;
 	background: #007DD1;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
