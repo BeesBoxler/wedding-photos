@@ -2486,3 +2486,505 @@ Served asset /users.js - 304 Not Modified (1ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 00:04:13 +0100
 Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/photos/new" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Processing by PhotosController#new as HTML
+  Rendered photos/_form.html.erb (81.2ms)
+  Rendered photos/new.html.erb within layouts/application (118.1ms)
+Completed 200 OK in 171ms (Views: 136.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 00:12:30 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-04-01 00:12:38 +0100
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fea5ffe1cc0 @original_filename="Atlantis_The_Lost_Empire_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"Atlantis_The_Lost_Empire_poster.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/RackMultipart20140401-5979-m9zhsg>>}, "commit"=>"Create Photo"}
+Completed 500 Internal Server Error in 0ms
+
+TypeError (can't convert Symbol into Integer):
+  app/controllers/photos_controller.rb:43:in `new'
+  app/controllers/photos_controller.rb:43:in `create'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-04-01 00:12:52 +0100
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fea5e9d96f8 @original_filename="Atlantis_The_Lost_Empire_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"Atlantis_The_Lost_Empire_poster.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/RackMultipart20140401-5979-1vad119>>}, "commit"=>"Create Photo"}
+Command :: file -b --mime-type '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/876ec6f09df95424c2f5dce775a6376520140401-5979-i9ea2j'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx3[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx3[0]'
+Command :: convert '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx3[0]' -auto-orient -resize "400x400>" '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx320140401-5979-16lnw5r'
+Command :: file -b --mime '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx320140401-5979-16lnw5r'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx3[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx3[0]'
+Command :: convert '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx3[0]' -auto-orient -resize "100%" '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx320140401-5979-5aa1ke'
+Command :: file -b --mime '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx320140401-5979-5aa1ke'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime-type '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/26b6a8b2670c2e1d0a749579a112156520140401-5979-1ree53u'
+  [1m[35mSQL (55.5ms)[0m  INSERT INTO "photos" ("created_at", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Mon, 31 Mar 2014 23:12:53 UTC +00:00], ["image_content_type", "image/jpeg"], ["image_file_name", "Atlantis_The_Lost_Empire_poster.jpg"], ["image_file_size", 141901], ["image_updated_at", Mon, 31 Mar 2014 23:12:52 UTC +00:00], ["updated_at", Mon, 31 Mar 2014 23:12:53 UTC +00:00], ["user_id", nil]]
+[paperclip] saving /photos/images/000/000/002/original/Atlantis_The_Lost_Empire_poster.jpg
+[AWS S3 200 22.059982 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>141901,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: Atlantis_The_Lost_Empire_poster.jpg,:key=>"photos/images/000/000/002/original/Atlantis_The_Lost_Empire_poster.jpg")  
+
+[paperclip] saving /photos/images/000/000/002/small/Atlantis_The_Lost_Empire_poster.jpg
+[AWS S3 200 9.148315 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>143608,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx320140401-5979-16lnw5r,:key=>"photos/images/000/000/002/small/Atlantis_The_Lost_Empire_poster.jpg")  
+
+[paperclip] saving /photos/images/000/000/002/full/Atlantis_The_Lost_Empire_poster.jpg
+[AWS S3 200 13.279862 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>145417,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: f461761daf6040f7e53630a6f27e5b7420140401-5979-13ucjx320140401-5979-5aa1ke,:key=>"photos/images/000/000/002/full/Atlantis_The_Lost_Empire_poster.jpg")  
+
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/photos/2
+Completed 302 Found in 45515ms (ActiveRecord: 59.3ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-04-01 00:13:38 +0100
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.7ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered photos/show.html.erb within layouts/application (61.3ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <table>
+    3:   
+    4:   <tr>
+    5:     <td><%= @photo.user.name %></td>
+    6:     <td><%= image_tag @photo.image.url(:small) %></td>
+    7:   </tr>
+    8: 
+  app/views/photos/show.html.erb:5:in `_app_views_photos_show_html_erb___3735709662377304808_70322292466820'
+  app/controllers/photos_controller.rb:18:in `show'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-04-01 00:13:51 +0100
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT "photos".* FROM "photos" [0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered photos/index.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    9: 
+    10: <% @photos.each do |photo| %>
+    11:   <tr>
+    12:     <td><%= photo.user.name %></td>
+    13:     <td><%= image_tag photo.image.url(:small) %></td>
+    14:   </tr>
+    15:   <tr>
+  app/views/photos/index.html.erb:12:in `block in _app_views_photos_index_html_erb__667915018044951343_70322277932720'
+  app/views/photos/index.html.erb:10:in `each'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb__667915018044951343_70322277932720'
+  app/controllers/photos_controller.rb:7:in `index'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-04-01 00:16:29 +0100
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered photos/index.html.erb within layouts/application (36.0ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    9: 
+    10: <% @photos.each do |photo| %>
+    11:   <tr>
+    12:     <td><%= photo.user.name %></td>
+    13:     <td><%= image_tag photo.image.url(:small) %></td>
+    14:   </tr>
+    15:   <tr>
+  app/views/photos/index.html.erb:12:in `block in _app_views_photos_index_html_erb__667915018044951343_70322277932720'
+  app/views/photos/index.html.erb:10:in `each'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb__667915018044951343_70322277932720'
+  app/controllers/photos_controller.rb:7:in `index'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)
+
+
+Started GET "/photos/new" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Processing by PhotosController#new as HTML
+  Rendered photos/_form.html.erb (1.4ms)
+  Rendered photos/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 96ms (Views: 95.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 00:16:43 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-04-01 00:16:54 +0100
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fea5f8ab988 @original_filename="general-real.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"general-real.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/RackMultipart20140401-5979-gfsyhk>>}, "commit"=>"Create Photo"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `build' for #<Class:0x007fea5db02648>):
+  app/controllers/photos_controller.rb:43:in `create'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.4ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-04-01 00:23:07 +0100
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fea5ea24090 @original_filename="general-real.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"general-real.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/RackMultipart20140401-5979-1yzry4p>>}, "commit"=>"Create Photo"}
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `build' for #<Class:0x007fea5e8b34e0>):
+  app/controllers/photos_controller.rb:44:in `create'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (31.0ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.1ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-04-01 00:23:12 +0100
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fea5ca3b7b0 @original_filename="general-real.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"general-real.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/RackMultipart20140401-5979-yuqhgu>>}, "commit"=>"Create Photo"}
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `build' for #<Class:0x007fea5e8b34e0>):
+  app/controllers/photos_controller.rb:44:in `create'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-04-01 00:23:36 +0100
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fea5c3a6800 @original_filename="general-real.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"general-real.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/RackMultipart20140401-5979-oz7nh4>>}, "commit"=>"Create Photo"}
+Command :: file -b --mime-type '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/f4ea3e99d565597c4403355ed6682f5b20140401-5979-9wv2kt'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha[0]'
+Command :: convert '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha[0]' -auto-orient -resize "400x400>" '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha20140401-5979-psndys'
+Command :: file -b --mime '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha20140401-5979-psndys'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha[0]'
+Command :: convert '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha[0]' -auto-orient -resize "100%" '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha20140401-5979-76duwv'
+Command :: file -b --mime '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha20140401-5979-76duwv'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime-type '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/e79c11ea3ab70acb1a32dc0b1be9880a20140401-5979-nqcgmj'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "photos" ("created_at", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Mon, 31 Mar 2014 23:23:36 UTC +00:00], ["image_content_type", "image/jpeg"], ["image_file_name", "general-real.jpg"], ["image_file_size", 36778], ["image_updated_at", Mon, 31 Mar 2014 23:23:36 UTC +00:00], ["updated_at", Mon, 31 Mar 2014 23:23:36 UTC +00:00], ["user_id", nil]]
+[paperclip] saving /photos/images/000/000/003/original/general-real.jpg
+[AWS S3 200 1.606506 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>36778,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: general-real.jpg,:key=>"photos/images/000/000/003/original/general-real.jpg")  
+
+[paperclip] saving /photos/images/000/000/003/small/general-real.jpg
+[AWS S3 200 0.531585 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>26356,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: 13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha20140401-5979-psndys,:key=>"photos/images/000/000/003/small/general-real.jpg")  
+
+[paperclip] saving /photos/images/000/000/003/full/general-real.jpg
+[AWS S3 200 1.059838 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>36079,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: 13369cd5f365b8d3b2a5ab0fcd87594b20140401-5979-1w75pha20140401-5979-76duwv,:key=>"photos/images/000/000/003/full/general-real.jpg")  
+
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/photos/3
+Completed 302 Found in 3558ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/photos/3" for 127.0.0.1 at 2014-04-01 00:23:40 +0100
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered photos/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <table>
+    3:   
+    4:   <tr>
+    5:     <td><%= @photo.user.name %></td>
+    6:     <td><%= image_tag @photo.image.url(:small) %></td>
+    7:   </tr>
+    8: 
+  app/views/photos/show.html.erb:5:in `_app_views_photos_show_html_erb___3735709662377304808_70322292466820'
+  app/controllers/photos_controller.rb:18:in `show'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-04-01 00:24:43 +0100
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered photos/index.html.erb within layouts/application (26.4ms)
+Completed 500 Internal Server Error in 55ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    9: 
+    10: <% @photos.each do |photo| %>
+    11:   <tr>
+    12:     <td><%= photo.user.name %></td>
+    13:     <td><%= image_tag photo.image.url(:small) %></td>
+    14:   </tr>
+    15:   <tr>
+  app/views/photos/index.html.erb:12:in `block in _app_views_photos_index_html_erb__667915018044951343_70322277932720'
+  app/views/photos/index.html.erb:10:in `each'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb__667915018044951343_70322277932720'
+  app/controllers/photos_controller.rb:7:in `index'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.7ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered photos/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 75ms (Views: 73.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:18 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/photos/new" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Processing by PhotosController#new as HTML
+  Rendered photos/_form.html.erb (2.0ms)
+  Rendered photos/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 00:25:24 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-04-01 00:25:30 +0100
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fea5ce92200 @original_filename="Screen Shot 2014-03-31 at 20.46.37.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"Screen Shot 2014-03-31 at 20.46.37.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<File:/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/RackMultipart20140401-5979-1xyzsro>>}, "commit"=>"Create Photo"}
+Command :: file -b --mime-type '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ab0e8c268191ba8a253c01786c7d2cb320140401-5979-1dpjbck'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv[0]'
+Command :: convert '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv[0]' -auto-orient -resize "400x400>" '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv20140401-5979-fm21rw'
+Command :: file -b --mime '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv20140401-5979-fm21rw'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv[0]'
+Command :: convert '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv[0]' -auto-orient -resize "100%" '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv20140401-5979-1ooqa37'
+Command :: file -b --mime '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/ff99ee5239341516b22d101f4a49862420140401-5979-1589viv20140401-5979-1ooqa37'
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime-type '/var/folders/dy/44d_g0rx3ls_f03cmh3d76940000gn/T/2d9ba09fd088a97e72412a827eb03ead20140401-5979-3pubud'
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "photos" ("created_at", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Mon, 31 Mar 2014 23:25:31 UTC +00:00], ["image_content_type", "image/png"], ["image_file_name", "Screen_Shot_2014-03-31_at_20.46.37.png"], ["image_file_size", 48830], ["image_updated_at", Mon, 31 Mar 2014 23:25:30 UTC +00:00], ["updated_at", Mon, 31 Mar 2014 23:25:31 UTC +00:00], ["user_id", nil]]
+[paperclip] saving /photos/images/000/000/004/original/Screen_Shot_2014-03-31_at_20.46.37.png
+[AWS S3 200 3.199671 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>48830,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2014-03-31 at 20.46.37.png,:key=>"photos/images/000/000/004/original/Screen_Shot_2014-03-31_at_20.46.37.png")  
+
+[paperclip] saving /photos/images/000/000/004/small/Screen_Shot_2014-03-31_at_20.46.37.png
+[AWS S3 200 0.788372 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>43733,:content_type=>"image/png",:data=>Paperclip::FileAdapter: ff99ee5239341516b22d101f4a49862420140401-5979-1589viv20140401-5979-fm21rw,:key=>"photos/images/000/000/004/small/Screen_Shot_2014-03-31_at_20.46.37.png")  
+
+[paperclip] saving /photos/images/000/000/004/full/Screen_Shot_2014-03-31_at_20.46.37.png
+[AWS S3 200 0.509422 0 retries] put_object(:acl=>:public_read,:bucket_name=>"grit-wedding",:content_length=>37006,:content_type=>"image/png",:data=>Paperclip::FileAdapter: ff99ee5239341516b22d101f4a49862420140401-5979-1589viv20140401-5979-1ooqa37,:key=>"photos/images/000/000/004/full/Screen_Shot_2014-03-31_at_20.46.37.png")  
+
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/photos/4
+Completed 302 Found in 4857ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-04-01 00:25:35 +0100
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered photos/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <table>
+    3:   
+    4:   <tr>
+    5:     <td><%= @photo.user.name %></td>
+    6:     <td><%= image_tag @photo.image.url(:small) %></td>
+    7:   </tr>
+    8: 
+  app/views/photos/show.html.erb:5:in `_app_views_photos_show_html_erb___3735709662377304808_70322292466820'
+  app/controllers/photos_controller.rb:18:in `show'
+
+
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/bentaylor/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.1ms)

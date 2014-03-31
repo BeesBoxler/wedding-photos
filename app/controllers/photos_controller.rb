@@ -35,6 +35,7 @@ class PhotosController < ApplicationController
   # GET /photos/1/edit
   def edit
     @photo = Photo.find(params[:id])
+    @photo.user_id=1
   end
 
   # POST /photos
