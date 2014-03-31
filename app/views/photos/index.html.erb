@@ -10,7 +10,7 @@
 <% @photos.each do |photo| %>
   <tr>
     <td><%= photo.user.name %></td>
-    <td><%= image_tag friend.image.url(:small)</td>
+    <td><%= image_tag photo.image.url(:small)</td>
   </tr>
   <tr>
     <td><%= link_to 'Show', photo %></td>
