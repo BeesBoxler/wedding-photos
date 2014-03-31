@@ -1489,3 +1489,229 @@ Migrating to AddImageToPhotos (20140331195032)
   [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140331195032')[0m
   [1m[35m (0.8ms)[0m  COMMIT
   [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Processing by SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (1.5ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 18.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:28 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-03-31 21:59:29 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "commit"=>"Create Session"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (116.8ms)[0m  INSERT INTO "sessions" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Mon, 31 Mar 2014 20:59:29 UTC +00:00], ["updated_at", Mon, 31 Mar 2014 20:59:29 UTC +00:00]]
+  [1m[36m (71.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/sessions/1
+Completed 302 Found in 193ms (ActiveRecord: 188.8ms)
+
+
+Started GET "/sessions/1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Processing by SessionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSession Load (0.8ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered sessions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:30 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Processing by SessionsController#index as HTML
+  [1m[36mSession Load (0.4ms)[0m  [1mSELECT "sessions".* FROM "sessions" [0m
+  Rendered sessions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:32 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/sessions/1" for 127.0.0.1 at 2014-03-31 21:59:36 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zLy6TWfOa7Y8zyZ7Dy5zLrE/b5/nMGnWe+iwXxfE4Hs=", "id"=>"1"}
+  [1m[35mSession Load (0.3ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (59.6ms)[0m  DELETE FROM "sessions" WHERE "sessions"."id" = $1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/sessions
+Completed 302 Found in 63ms (ActiveRecord: 60.5ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2014-03-31 21:59:36 +0100
+Processing by SessionsController#index as HTML
+  [1m[35mSession Load (0.3ms)[0m  SELECT "sessions".* FROM "sessions" 
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /photos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /photos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-31 21:59:37 +0100
+Served asset /application.js - 304 Not Modified (0ms)
