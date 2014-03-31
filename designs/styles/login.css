@@ -1,0 +1,35 @@
+div#login{
+	margin: 4% auto 0 auto;
+	width: 70%;
+	max-width: 400px;
+	height: auto;
+	min-height: 142px;
+}
+
+div#login div a{
+	width: 90%;
+	display: inline-block;
+	padding: 5%;
+	background: #007DD1;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #222222;
+	font-size: 1.4em;
+	font-weight: 300;
+	-webkit-box-shadow:0 0 5px 0 rgba(56,175,255,0.2), inset 0 0 5px 0 rgba(0,0,0,0.1);
+	box-shadow:0 0 5px 0 rgba(56,175,255,0.2), inset 0 0 5px 0 rgba(0,0,0,0.1);
+	text-shadow: 1px 1px 1px #888;
+}
+
+div#login div a:hover, div#login div a:focus{
+	background: #007ACC;
+	-webkit-box-shadow:0 0 7px 0 rgba(56,175,255,0.3), inset 0 0 7px 0 rgba(0,0,0,0.2);
+	box-shadow:0 0 7px 0 rgba(56,175,255,0.3), inset 0 0 7px 0 rgba(0,0,0,0.2);
+	color: #000000;
+}
+
+div#login #return_user a{
+	margin-bottom: 20px;
+}
