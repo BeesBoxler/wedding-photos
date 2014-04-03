@@ -9,7 +9,7 @@
 <body>
 
   <% if signed_in? %>
-    You are signed in as <%= current_user.name %>. <%= link_to "Sign out", signout_path, method: :delete %>.
+    You are signed in as <%= link_to current_user.name, user_path(current_user) %>. <%= link_to "Sign out", signout_path, method: :delete %>.
 
   <% else %>
     You are not currently signed in <%= link_to "Sign in", signin_path %>
