@@ -9,6 +9,7 @@
 
 <% @photos.each do |photo| %>
   <tr>
+    <td>Uploaded by <%= photo.user.name %></td>
     <td><%= image_tag photo.image.url(:small) %></td>
   </tr>
   <tr>
