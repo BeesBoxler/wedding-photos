@@ -15,3 +15,9 @@ Website for Grit's wedding photos
 * Add links to scaffold pages
 * Begin to think about implimenting AJAX
 * Asyncrinous(sp?) uploads
+* Uploaded image name changed to user_id-image_id-timestamp.jpg
+* ohshitihavetoaddvideos
+
+## BONUS:
+
+* Fun timestamp stuff
