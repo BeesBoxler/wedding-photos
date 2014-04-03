@@ -4,7 +4,33 @@
   <%= link_to 'Upload photo', new_photo_path %>
 <% else %>
 
-  <%= link_to 'Sign in', signin_path %>
+  <%= link_to 'Sign in', signin_path, class: "blue" %>
   <%= link_to 'Sign up', signup_path %>
+
+  <br><br>
+
+  <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+  <%= f.submit "Sign in" %>
+<% end %>
+  <%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <% end %>
+
+
 
 <% end %>
