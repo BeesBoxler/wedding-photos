@@ -1,0 +1,10 @@
+<h1>Grit and Drew finally tied the knot!</h1>
+
+<% if signed_in? %>
+  <%= link_to 'Upload photo', new_photo_path %>
+<% else %>
+
+  <%= link_to 'Sign in', signin_path %>
+  <%= link_to 'Sign up', signup_path %>
+
+<% end %>
