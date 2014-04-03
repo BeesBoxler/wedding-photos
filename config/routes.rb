@@ -2,7 +2,11 @@ Grit::Application.routes.draw do
 
   root to: 'sessions#new'
 
-  resources :sessions
+  resources :sessions, only: [ :new, :create, :destroy ]
+
+  match '/signin',  to: 'sessions#new'
+  match '/signup',  to: 'users#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
 
   resources :photos
