@@ -1,11 +1,5 @@
 Grit::Application.routes.draw do
 
-  get "static_pages/error_404"
-
-  get "static_pages/error_500"
-
-  get "static_pages/landing"
-
   root to: 'static_pages#landing'
 
   resources :sessions, only: [ :new, :create, :destroy ]
@@ -14,11 +8,16 @@ Grit::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  match '/404', to: 'static_pages#error_404', as: 'fourohfour'
+  match '/500', to: 'static_pages#error_500', as: 'fivedoubleoh'
+
 
   resources :photos
 
 
   resources :users
+
+  match '*a', to: 'static_pages#error_404'
 
 
   # The priority is based upon order of creation:
