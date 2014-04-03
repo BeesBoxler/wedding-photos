@@ -1,6 +1,12 @@
 Grit::Application.routes.draw do
 
-  root to: 'sessions#new'
+  get "static_pages/error_404"
+
+  get "static_pages/error_500"
+
+  get "static_pages/landing"
+
+  root to: 'static_pages#landing'
 
   resources :sessions, only: [ :new, :create, :destroy ]
 
