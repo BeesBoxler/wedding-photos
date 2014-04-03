@@ -16,3 +16,10 @@
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <%= link_to 'Upload photo', new_photo_path %>
+
+<% if @photos.any? %>
+  <h2>Photos</h2>
+  <% @photos.each do |photo| %>
+    <%= image_tag photo.image.url(:full) %>
+  <% end %>
+<% end %>
