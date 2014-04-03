@@ -34,4 +34,14 @@ Grit::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # paperclip and S3 set up
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'grit-wedding',
+      :access_key_id => 'AKIAIY7LLBFZIVJXVVKQ',
+      :secret_access_key => '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'
+    }
+  }
 end

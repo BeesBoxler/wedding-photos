@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<table>
+  
+  <tr>
+    <td>Uploaded by <%= @photo.user.name %></td>
+    <td><%= image_tag @photo.image.url(:full) %></td>
+  </tr>
+
+</table>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
