@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700);
 
+@import 'config';
+
 html, body{
   font-family: 'Roboto', sans-serif;
 }
@@ -42,12 +44,12 @@ header nav a{
   float: right;
   margin: 10px 10px 0 0;
   padding: 15px 20px;
-  background: #007DD1;
+  background: $blue;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   text-align: center;
   text-decoration: none;
-  color: #f7f7f7;
+  color: $background-color;
   font-weight: 300;
   -webkit-box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 3px 0 rgba(0,0,0,0.4);
   box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 3px 0 rgba(0,0,0,0.4);

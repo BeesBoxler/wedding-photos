@@ -2,21 +2,32 @@
 <html>
 <head>
   <title>Grit</title>
-  <%= stylesheet_link_tag    "reset" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    params[:controller] %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <% if signed_in? %>
-    You are signed in as <%= link_to current_user.name, user_path(current_user) %>. <%= link_to "Sign out", signout_path, method: :delete %>.
+  <header>
+    <nav>
+      <% if signed_in? %>
+        
+        <%= link_to "Sign out", signout_path, method: :delete %>
+        <%= link_to current_user.name, user_path(current_user) %>
+      <% else %>
+        <%= link_to "Sign in", signin_path %>
+      <% end %>
+    </nav>
+  </header>
 
-  <% else %>
-    You are not currently signed in <%= link_to "Sign in", signin_path %>
-  <% end %>
+  
 
 <%= yield %>
 
+  <footer>
+    <p>Designed and Developed by Alex and Ben</p>
+  </footer>  
 </body>
 </html>
