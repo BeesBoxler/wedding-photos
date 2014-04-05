@@ -15,10 +15,12 @@
       <% if signed_in? %>
         
         <%= link_to "Sign out", signout_path, method: :delete %>
+        <%= link_to   "Upload photo", new_photo_path %>
         <%= link_to current_user.name, user_path(current_user) %>
       <% else %>
         <%= link_to "Sign in", signin_path %>
       <% end %>
+      <%= link_to "Home", root_path %>
     </nav>
   </header>
 
