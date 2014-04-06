@@ -3,19 +3,34 @@
 <head>
   <title>Grit</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    params[:controller] %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <% if signed_in? %>
-    You are signed in as <%= current_user.name %>. <%= link_to "Sign out", signout_path, method: :delete %>.
+  <header>
+    <% if signed_in? %>
+      <h1>Grit and Drew's Wedding Album</h1>
+    <% end %>
+    <nav>
+      <% if signed_in? %>
+        <%= link_to "Sign out", signout_path, method: :delete %>
+        <%= link_to "My Account", user_path(current_user) %>
+        <%= link_to "Upload photo", new_photo_path %>
+        <%= link_to "All Photos", photos_path %>
+      <% else %>
+      <% end %>
+    </nav>
+  </header>
 
-  <% else %>
-    You are not currently signed in <%= link_to "Sign in", signin_path %>
-  <% end %>
+  
 
 <%= yield %>
 
+  <footer>
+    <p>Designed and Developed by Alex and Ben</p>
+  </footer>  
 </body>
 </html>

@@ -1,36 +1,32 @@
-<h1>Grit and Drew finally tied the knot!</h1>
-
 <% if signed_in? %>
-  <%= link_to 'Upload photo', new_photo_path %>
 <% else %>
-
-  <%= link_to 'Sign in', signin_path, class: "blue" %>
-  <%= link_to 'Sign up', signup_path %>
-
-  <br><br>
-
-  <%= form_for(:session, url: sessions_path) do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-  <%= f.submit "Sign in" %>
+<h1 class="login">Grit and Drew's Wedding Album</h1>
 <% end %>
-  <%= form_for(@user) do |f| %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+<div id="login">
+  <% if signed_in? %>
+    <%= link_to 'Upload photo', new_photo_path, class: "button" %>
+    <%= link_to 'View all photos', photos_path, class: "button" %>
+  <% else %>
+  
+  <div id="return_user">
+    <a href="#" class="button">I have already started</a>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <%= f.email_field :email, placeholder: "Email address" %>
+      <%= f.submit "Sign in", class: "button" %>
+      <a href="#" class="back_button button">Back</a>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div id="new_user">
+    <a href="#" class="button">This is my first time</a>
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :email, placeholder: "Email address" %>
+      <%= f.text_field :name, placeholder: "Your name" %>
+      <%= f.submit "Register", class: "button" %>
+      <a href="#" class="back_button button">Back</a>
+    <% end %>
   </div>
 
   <% end %>
+</div>
 
-
-
-<% end %>
+<%= javascript_include_tag "landing" %>

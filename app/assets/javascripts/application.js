@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require masonry.pkgd.min
+//= require imagesloaded.pkgd.min
+//= require global

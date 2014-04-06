@@ -1,18 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+<div class="content_left">	
+	<h2>My Photos</h2>
+	<% if @photos.any? %>
+	  <% @photos.each do |photo| %>
+	    <%= image_tag photo.image.url(:full) %>
+	  <% end %>
+	<% end %>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+<div class="content_right">
+	<h2>My Details</h2>
+	<p>
+	  <b>Email:</b>
+	  <%= @user.email %>
+	</p>
 
-<%= render 'form' %>
+	<p>
+	  <b>Name:</b>
+	  <%= @user.name %>
+	</p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to 'Upload photo', new_photo_path %>
+	<%= render 'form' %>
+</div>
