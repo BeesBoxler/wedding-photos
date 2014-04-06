@@ -1,3 +1,11 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li.photo{
+	width: 25%;
+}
+
+li.photo.w2{
+	width: 50%;
+}
