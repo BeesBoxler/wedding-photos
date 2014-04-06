@@ -1,11 +1,11 @@
 $(function() {
-	$("#return_user > a").click(function() {
+	$("#return_user > a.button").click(function() {
 		$(this).fadeOut(300);
 		$("#new_user a").fadeOut(300);
 		$("#return_user form").delay(300).fadeIn(300);
 		return false;
 	});
-	$("#new_user > a").click(function() {
+	$("#new_user > a.button").click(function() {
 		$(this).fadeOut(300);
 		$("#return_user a").fadeOut(300);
 		$("#new_user form").delay(300).fadeIn(300);
