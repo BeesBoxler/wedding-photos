@@ -10,6 +10,7 @@
  *
  *= require reset
  *= require global
+ *= require lightbox
  *= require_self
  * require_tree .
  */
