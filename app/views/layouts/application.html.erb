@@ -11,18 +11,17 @@
 <body>
 
   <header>
-    <% if signed_in? %>
-      <h1>Grit and Drew's Wedding Album</h1>
-    <% end %>
     <nav>
       <% if signed_in? %>
         <%= link_to "Sign out", signout_path, method: :delete %>
         <%= link_to "My Account", user_path(current_user) %>
         <%= link_to "Upload photo", new_photo_path %>
         <%= link_to "All Photos", photos_path %>
-      <% else %>
       <% end %>
     </nav>
+
+    <h1><%= link_to "Grit and Drew's Wedding Album", root_path %></h1>
+
   </header>
 
   
