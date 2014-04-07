@@ -67,6 +67,11 @@ h1{
   padding: 16px;
   position: relative;
   text-shadow: 1px 1px 1px #fff;
+
+  a {
+    color:#000;
+    text-decoration:none;
+  }
 }
 
 h1.login{
