@@ -24,8 +24,7 @@ class PhotosController < ApplicationController
   # GET /photos/new
   # GET /photos/new.json
   def new
-    @user = current_user
-    @photo = @user.photos.create
+    @photo = Photo.new
 
     respond_to do |format|
       format.html # new.html.erb
