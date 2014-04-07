@@ -4,7 +4,7 @@
 	<h2>My Photos</h2>
 	<% if @photos.any? %>
 	  <% @photos.each do |photo| %>
-	    <%= image_tag photo.image.url(:full) %>
+	    <%= image_tag photo.image.url(:small) %>
 	  <% end %>
 	<% end %>
 </div>
