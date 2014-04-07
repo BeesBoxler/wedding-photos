@@ -21,36 +21,9 @@ div#login{
   min-height: 142px;
 }
 
-div#login .button{
-  display: inline-block;
+div#login > div > a.button{
   width: 90%;
   padding: 5%;
-  margin-bottom: 20px;
-  background: $blue;
-  border: 0;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: $background-color;
-  font-size: 1.4em;
-  font-weight: 300;
-  -webkit-box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 5px 0 rgba(0,0,0,0.4);
-  box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 5px 0 rgba(0,0,0,0.4);
-  text-shadow: 1px 1px 1px #888;
-}
-
-div#login .button:hover, div#login .button:focus{
-  background: $blue;
-  -webkit-box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 7px 0 rgba(0,0,0,0.6);
-  box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 7px 0 rgba(0,0,0,0.6);
-  color: #ffffff;
-  opacity: 1;
-  -webkit-transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 
 div#login form{
@@ -70,60 +43,3 @@ div#login form input[type='text'], div#login form input[type='email']{
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-
-div#login form .button{
-  width: 44.5%;
-  padding: 3% 2%;
-}
-
-div#login form .button:last-child{
-  opacity: 0.5;
-  margin-left: 20px;
-  -webkit-transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
-}
-
-/*  ERRORS  
-
-div{
-  margin-top: 16%;
-  text-align: center;
-}
-
-h1{
-  color: $blue;
-}
-
-p{
-  margin-top: 2%;
-  font-size: 2.5em;
-  font-style: italic;
-}
-
-a{
-  display: inline-block;
-  margin: 2.5% 0.5% 0;
-  padding: 15px 20px;
-  background: $blue;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  color: #f7f7f7;
-  font-weight: 300;
-  -webkit-box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 3px 0 rgba(0,0,0,0.4);
-  box-shadow:0 0 5px 0 rgba(255,255,255,0.2), inset 1px 1px 3px 0 rgba(0,0,0,0.4);
-  text-shadow: 1px 1px 1px #888;
-}
-
-a:hover, a:focus{
-  background: #007ACC;
-  -webkit-box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 3px 0 rgba(0,0,0,0.6);
-  box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 3px 0 rgba(0,0,0,0.6);
-  color: #ffffff;
-}
-
-*/

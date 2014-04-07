@@ -1,14 +1,12 @@
 <h1>Listing photos</h1>
 
 <div id="container">
-  <ul>
   <% @photos.each do |photo| %>
-    <li class="photo">
+    <div class="photo">
       <%= image_tag photo.image.url(:small) %>
       <p>Uploaded by <%= photo.user.name %></p>
       <%= link_to 'View', photo %>
       <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
+    </div>
   <% end %>
-  </ul>
 </div>
