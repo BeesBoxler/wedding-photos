@@ -17,7 +17,7 @@ $(function() {
   });
   $("form a.back_button").click(function() {
     $("form").fadeOut(300);
-    $("#return_user a, #new_user a").delay(300).fadeIn(300);
+    $("#return_user a, #new_user a").delay(400).fadeIn(300);
     return false;
   });
   $("#submit_new").click(function(){ 

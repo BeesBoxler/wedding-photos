@@ -1,32 +1,31 @@
-<h1>Grit and Drew's Wedding Album</h1>
+<% if signed_in? %>
+<% else %>
+<h1 class="login">Grit and Drew's Wedding Album</h1>
+<% end %>
 <div id="login">
   <% if signed_in? %>
     <%= link_to 'Upload photo', new_photo_path, class: "button" %>
+    <%= link_to 'View all photos', photos_path, class: "button" %>
   <% else %>
   
-    <div id="return_user">
-      <a href="#" class="button">I have already started</a>
+  <div id="return_user">
+    <a href="#" class="button">I have already started</a>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <%= f.email_field :email, placeholder: "Email address" %>
+      <%= f.submit "Sign in", class: "button" %>
+      <a href="#" class="back_button button">Back</a>
+    <% end %>
+  </div>
+  <div id="new_user">
+    <a href="#" class="button">This is my first time</a>
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :email, placeholder: "Email address" %>
+      <%= f.text_field :name, placeholder: "Your name" %>
+      <%= f.submit "Register", class: "button" %>
+      <a href="#" class="back_button button">Back</a>
+    <% end %>
+  </div>
 
-        <%= form_for(:session, url: sessions_path) do |f| %>
-          <%= f.email_field :email, placeholder: "Email address" %>
-          <%= f.submit "Sign in", class: "button" %>
-          <a href="#" class="back_button button">Back</a>
-        <% end %>
-
-      </form>
-    </div>
-    <div id="new_user">
-      <a href="#" class="button">This is my first time</a>
-
-        <%= form_for(@user) do |f| %>
-          <%= f.text_field :email, placeholder: "Email address" %>
-          <%= f.text_field :name, placeholder: "Your name" %>
-          <%= f.submit "register", class: "button" %>
-          <a href="#" class="back_button button">Back</a>
-
-        <% end %>
-    </div>
-  
   <% end %>
 </div>
 
