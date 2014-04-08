@@ -5,7 +5,7 @@
     <div class="photo">
       <%= link_to image_tag( photo.image.url(:small) ),
                   photo.image.url(:full),
-                  data: { lightbox: "wedding", title: "Image Title" }  %>
+                  data: { lightbox: "wedding", title: photo.title }  %>
       <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
       <p>Uploaded by <%= photo.user.name %></p>
     </div>
