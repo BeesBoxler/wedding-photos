@@ -1,0 +1,14 @@
+Mon, 07 Apr 2014 15:35:54 +0100
+doc/README_FOR_APP	Sun, 30 Mar 2014 23:04:23 +0100
+app/controllers/application_controller.rb	Thu, 03 Apr 2014 21:53:16 +0100
+app/controllers/photos_controller.rb	Mon, 07 Apr 2014 15:24:41 +0100
+app/controllers/sessions_controller.rb	Mon, 07 Apr 2014 14:30:37 +0100
+app/controllers/static_pages_controller.rb	Mon, 07 Apr 2014 14:30:37 +0100
+app/controllers/users_controller.rb	Mon, 07 Apr 2014 14:30:37 +0100
+app/helpers/application_helper.rb	Sun, 30 Mar 2014 23:04:23 +0100
+app/helpers/photos_helper.rb	Thu, 03 Apr 2014 20:50:49 +0100
+app/helpers/sessions_helper.rb	Thu, 03 Apr 2014 20:50:49 +0100
+app/helpers/static_pages_helper.rb	Mon, 07 Apr 2014 14:30:37 +0100
+app/helpers/users_helper.rb	Thu, 03 Apr 2014 20:50:49 +0100
+app/models/photo.rb	Mon, 07 Apr 2014 14:30:37 +0100
+app/models/user.rb	Mon, 07 Apr 2014 14:30:37 +0100

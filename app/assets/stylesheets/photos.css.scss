@@ -2,9 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'config';
+
 div#container{
 	width: 99%;
 	margin: 0 auto;
+}
+
+li.photo{
+	width: 25%;
 }
 
 div.photo{
