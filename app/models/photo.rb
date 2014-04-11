@@ -7,7 +7,7 @@ class Photo < ActiveRecord::Base
     full:'100%'
   }
 
-  validates :title, { presence: true }
+  #validates :title, { presence: true }
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   # validates_attachment_presence
