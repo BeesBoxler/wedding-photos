@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require lightbox.min.js
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
