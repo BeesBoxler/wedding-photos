@@ -16,3 +16,5 @@
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
 //= require global
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl

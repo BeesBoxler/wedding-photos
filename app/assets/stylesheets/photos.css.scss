@@ -36,3 +36,14 @@ div.photo a{
 div.photo.w2{
 	width: 50%;
 }
+
+div.progress{
+  border: 1px solid #000;
+  border-radius:5px;
+  height:30px;
+  width:200px;
+  div.bar{
+    height:100%;
+    background-color:green;
+  }
+}
