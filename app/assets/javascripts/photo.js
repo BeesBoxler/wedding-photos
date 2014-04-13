@@ -1,4 +1,4 @@
-jQuery(function() {
+/*jQuery(function() {
   $('#new_photo').fileupload({
     dataType: "script",
     add: function(e, data) {
@@ -24,15 +24,23 @@ jQuery(function() {
 });
 $('#photo_image').attr('name', 'photo[image]');
 $('#photo_image').fileupload();
-return $( document ).ready(function() {
+return 
+*/
+$(document).ready(function() {
   $('#container').imagesLoaded().done( function( instance ) {
     $('#container').masonry({
       itemSelector: '.photo'
     });
     $(".fancybox").fancybox({
-      ajax: {
-        'dataType': 'html'
-      }
+      titleShow: true
     });
+  });
+  $('div.photo').hover(function() {
+    $(this).children('a.delete').fadeIn(300);
+    $(this).children('a.share').fadeIn(300);
+  }, function() {
+    $(this).children('a.delete').fadeOut(300);
+    $(this).children('a.share').fadeOut(300);
+  });
   });
 });;
