@@ -31,9 +31,14 @@ $( document ).ready(function() {
       itemSelector: '.photo'
     });
     $(".fancybox").fancybox({
-      ajax: {
-        'dataType': 'html'
-      }
+      titleShow: true
     });
+  });
+  $('div.photo').hover(function() {
+    $(this).children('a.delete').fadeIn(300);
+    $(this).children('a.share').fadeIn(300);
+  }, function() {
+    $(this).children('a.delete').fadeOut(300);
+    $(this).children('a.share').fadeOut(300);
   });
 });;
