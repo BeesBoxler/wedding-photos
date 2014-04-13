@@ -26,13 +26,11 @@ jQuery(function() {
 });
 
 $( document ).ready(function() {
-  $('#container').imagesLoaded().done( function( instance ) {
-    $('#container').masonry({
-      itemSelector: '.photo'
-    });
-    $(".fancybox").fancybox({
-      titleShow: true
-    });
+  $('#container').masonry({
+    itemSelector: '.photo'
+  });
+  $(".fancybox").fancybox({
+    titleShow: true
   });
   $('div.photo').hover(function() {
     $(this).children('a.delete').fadeIn(300);
