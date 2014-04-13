@@ -21,3 +21,16 @@ jQuery ->
 
   $('#photo_image').attr('name', 'photo[image]');
   $('#photo_image').fileupload();
+
+  `$( document ).ready(function() {
+    $('#container').imagesLoaded().done( function( instance ) {
+      $('#container').masonry({
+        itemSelector: '.photo'
+      });
+      $(".fancybox").fancybox({
+        ajax: {
+          'dataType': 'html'
+        }
+      });
+    });
+  });`

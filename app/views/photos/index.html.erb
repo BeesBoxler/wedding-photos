@@ -1,6 +1,9 @@
 <h1>Listing photos</h1>
 
 <div id="container">
+
+  <%= will_paginate %>
+
   <% @photos.each do |photo| %>
     <div class="photo">
       <%= link_to image_tag( photo.image.url(:small) ),
@@ -8,8 +11,12 @@
                   data: { title: photo.title },
                   rel: "wedding",
                   class: "fancybox"  %>
-      <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if current_user?(photo.user) %>
+        <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
       <p>Uploaded by <%= photo.user.name %></p>
     </div>
   <% end %>
+
+  <%= will_paginate %>
 </div>
