@@ -20,7 +20,6 @@ class PhotosController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @photo }
     end
-    render layout: false
   end
 
   # GET /photos/new
