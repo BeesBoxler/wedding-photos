@@ -3,23 +3,28 @@
 <div class="content_left">	
 	<h2>My Photos</h2>
 	<% if @photos.any? %>
-	  <% @photos.each do |photo| %>
-	    <%= image_tag photo.image.url(:small) %>
-	  <% end %>
+
+		<%= will_paginate @photos %>
+		  <% @photos.each do |photo| %>
+		    <%= image_tag photo.image.url(:small) %>
+		  <% end %>
+		<%= will_paginate @photos %>
 	<% end %>
 </div>
 
-<div class="content_right">
-	<h2>My Details</h2>
-	<p>
-	  <b>Email:</b>
-	  <%= @user.email %>
-	</p>
+<% if current_user?(@user) %>
+	<div class="content_right">
+		<h2>My Details</h2>
+		<p>
+		  <b>Email:</b>
+		  <%= @user.email %>
+		</p>
 
-	<p>
-	  <b>Name:</b>
-	  <%= @user.name %>
-	</p>
+		<p>
+		  <b>Name:</b>
+		  <%= @user.name %>
+		</p>
 
-	<%= render 'form' %>
-</div>
+		<%= render 'form' %>
+	</div>
+<% end %>

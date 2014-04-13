@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @photos = @user.photos.all
+    @photos = @user.photos.paginate(page: params[:page], per_page: 10)
 
     respond_to do |format|
       format.html # show.html.erb
