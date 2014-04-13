@@ -1,6 +1,9 @@
 <h1>Listing photos</h1>
 
 <div id="container">
+
+  <%= will_paginate %>
+
   <% @photos.each do |photo| %>
     <div class="photo">
       <%= link_to image_tag( photo.image.url(:small) ),
@@ -8,12 +11,14 @@
                   title: photo.title,
                   rel: "wedding",
                   class: "fancybox"  %>
-      <%= link_to raw('<i class="fa fa-trash-o"></i>'),
-                  photo,
-                  title: "Delete Photo",
-                  method: :delete, 
-                  data: { confirm: 'Are you sure?' },
-                  class: "delete" %>
+      <% if current_user?(photo.user) %>
+        <%= link_to raw('<i class="fa fa-trash-o"></i>'),
+                    photo,
+                    title: "Delete Photo",
+                    method: :delete, 
+                    data: { confirm: 'Are you sure?' },
+                    class: "delete" %>
+      <% end %>
       <%= link_to raw('<i class="fa fa-link"></i>'),
                   photo,
                   title: "Share Photo Link",
@@ -21,4 +26,6 @@
       <p>Uploaded by <%= photo.user.name %></p>
     </div>
   <% end %>
+
+  <%= will_paginate %>
 </div>
