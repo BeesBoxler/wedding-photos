@@ -24,7 +24,7 @@ jQuery(function() {
 });
 $('#photo_image').attr('name', 'photo[image]');
 $('#photo_image').fileupload();
-return $( document ).ready(function() {
+$( document ).ready(function() {
   $('#container').imagesLoaded().done( function( instance ) {
     $('#container').masonry({
       itemSelector: '.photo'
