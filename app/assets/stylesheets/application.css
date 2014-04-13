@@ -10,7 +10,7 @@
  *
  *= require reset
  *= require global
- *= require lightbox
+ *= require jquery.fancybox
  *= require_self
  */
 
