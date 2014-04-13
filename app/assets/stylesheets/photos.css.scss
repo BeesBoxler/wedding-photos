@@ -13,11 +13,21 @@ div.photo{
 	width: 15%;
 	padding: 0.75%;
 	margin: 0.25%;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 div.photo:hover{
 	background: #dddddd;
 	border-radius: 5px;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 div.photo img{
@@ -32,6 +42,84 @@ div.photo a{
 div.photo.w2{
 	width: 50%;
 }
+
+div.photo a.share{       
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #ccc;
+    background-image: linear-gradient(top, #eee, #ccc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    text-align: center;
+    padding: 1px 1px 0 0;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+    position: absolute;
+	z-index: 100;
+	bottom: 32px;
+	left: 14px;
+}
+
+div.photo a.share:hover {
+    background-color: #ddd;        
+    background-image: linear-gradient(top, #fafafa, #ddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');        
+}
+
+div.photo a.share:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+}
+
+div.photo a.share:focus {
+    outline: 0;
+    background: #fafafa;
+}    
+
+div.photo a.delete{
+	display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #cc0000;
+    background-image: linear-gradient(top, #ee0000, #cc0000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ee0000', EndColorStr='#cc0000');
+    border: 1px solid #770000;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    text-align: center;
+	padding: 0 1px 0 0;
+    color: #330000;
+    width: 30px;
+    height: 30px;
+    text-shadow: 0 1px 0 rgba(255,0,0,.8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255,0,0,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+    position: absolute;
+	z-index: 100;
+	bottom: 32px;
+	right: 14px;
+}
+
+div.photo a.delete:hover {
+    background-color: #dd0000;        
+    background-image: linear-gradient(top, #fa0000, #dd0000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fa0000', EndColorStr='#dd0000');        
+}
+
+div.photo a.delete:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+}
+
+div.photo a.delete:focus {
+    outline: 0;
+    background: #fa0000;
+}    
 
 div.progress{
   border: 1px solid #000;

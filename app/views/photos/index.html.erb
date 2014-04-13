@@ -8,12 +8,21 @@
     <div class="photo">
       <%= link_to image_tag( photo.image.url(:small) ),
                   photo.image.url(:full),
-                  data: { title: photo.title },
+                  title: photo.title,
                   rel: "wedding",
                   class: "fancybox"  %>
       <% if current_user?(photo.user) %>
-        <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to raw('<i class="fa fa-trash-o"></i>'),
+                    photo,
+                    title: "Delete Photo",
+                    method: :delete, 
+                    data: { confirm: 'Are you sure?' },
+                    class: "delete" %>
       <% end %>
+      <%= link_to raw('<i class="fa fa-link"></i>'),
+                  photo,
+                  title: "Share Photo Link",
+                  class: "share" %>
       <p>Uploaded by <%= photo.user.name %></p>
     </div>
   <% end %>
