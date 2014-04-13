@@ -2,9 +2,14 @@
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $( document ).ready(function() {
-	$('#container').imagesLoaded().done( function( instance ) {
-		$('#container').masonry({
-			itemSelector: '.photo'
-		});
-	});
+  $('#container').imagesLoaded().done( function( instance ) {
+    $('#container').masonry({
+      itemSelector: '.photo'
+    });
+    $(".fancybox").fancybox({
+      ajax: {
+        'dataType': 'html'
+      }
+    });
+  });
 });

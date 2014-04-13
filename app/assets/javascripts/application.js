@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require lightbox.min.js
+//= require jquery.fancybox.pack.js
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
 //= require global
