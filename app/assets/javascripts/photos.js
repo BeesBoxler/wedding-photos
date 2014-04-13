@@ -21,9 +21,10 @@ jQuery(function() {
       }
     }
   });
+  $('#photo_image').attr('name', 'photo[image]');
+  $('#photo_image').fileupload();
 });
-$('#photo_image').attr('name', 'photo[image]');
-$('#photo_image').fileupload();
+
 $( document ).ready(function() {
   $('#container').imagesLoaded().done( function( instance ) {
     $('#container').masonry({
