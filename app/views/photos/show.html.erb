@@ -1,7 +1,15 @@
+<% content_for :title, @photo.title %>
+
 <p id="notice"><%= notice %></p>
 
 <h2> <%= @photo.title %></h2>
 <span><%= @photo.description %></span>
+
+<% if current_user?(@photo.user) %>
+
+<%= render 'form' %>
+
+<% end -%>
   
 Uploaded by <%= @photo.user.name %>
 <%= image_tag @photo.image.url(:full) %>
