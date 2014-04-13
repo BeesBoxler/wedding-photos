@@ -4,10 +4,10 @@
   <% @photos.each do |photo| %>
     <div class="photo">
       <%= link_to image_tag( photo.image.url(:small) ),
-                  photo_path(photo),
+                  photo.image.url(:full),
                   data: { title: photo.title },
                   rel: "wedding",
-                  class: "fancybox fancybox.ajax" %>
+                  class: "fancybox"  %>
       <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
       <p>Uploaded by <%= photo.user.name %></p>
     </div>
