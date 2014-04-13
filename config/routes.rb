@@ -15,8 +15,9 @@ Grit::Application.routes.draw do
   resources :photos
 
 
-  resources :users
+  resources :users 
 
+  
   # match '*a', to: 'static_pages#error_404'
 
 
