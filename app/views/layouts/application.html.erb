@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Grit</title>
+  <title><%= title(yield(:title)) %></title>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    params[:controller] %>
