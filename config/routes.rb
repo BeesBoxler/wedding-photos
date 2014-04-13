@@ -17,7 +17,7 @@ Grit::Application.routes.draw do
 
   resources :users
 
-  match '*a', to: 'static_pages#error_404'
+  # match '*a', to: 'static_pages#error_404'
 
 
   # The priority is based upon order of creation:

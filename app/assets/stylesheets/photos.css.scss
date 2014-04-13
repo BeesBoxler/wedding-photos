@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'config';
+
+li.photo{
+	width: 25%;
+}
+
 div.photo{
 	width: 15%;
 	padding: 1%;
@@ -14,4 +20,15 @@ div.photo img{
 
 div.photo.w2{
 	width: 50%;
+}
+
+div.progress{
+  border: 1px solid #000;
+  border-radius:5px;
+  height:30px;
+  width:200px;
+  div.bar{
+    height:100%;
+    background-color:green;
+  }
 }

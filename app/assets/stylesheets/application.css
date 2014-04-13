@@ -12,7 +12,7 @@
  *= require global
  *= require lightbox
  *= require_self
- * require_tree .
  */
 
-
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700);

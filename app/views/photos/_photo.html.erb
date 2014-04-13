@@ -1,0 +1,6 @@
+<%= image_tag(photo.image.url(:small)) %>
+<%= form_for(photo) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<% end %>
