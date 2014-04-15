@@ -39,4 +39,12 @@ $( document ).ready(function() {
     $(this).children('a.delete').fadeOut(300);
     $(this).children('a.share').fadeOut(300);
   });
-});;
+  $('div.photo a.share').click(function(){
+    $('body').append('<div id="link_share" style="display:none;"><input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value="'+$(this).attr("href")+'"></input><button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button><p id="target-to-copy-text" style="display:none;">Text Copied.</p></div>');
+    $( "#link_share" ).dialog({
+      modal: true,
+    });
+    $('.link_share').select();
+    return false;
+  });
+});

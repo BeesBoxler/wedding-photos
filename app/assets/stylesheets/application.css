@@ -11,6 +11,7 @@
  *= require reset
  *= require global
  *= require jquery.fancybox
+ *= require jquery-ui-1.10.4.custom
  *= require_self
  */
 
