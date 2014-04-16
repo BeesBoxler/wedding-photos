@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui-1.10.4.custom.min
 //= require zeroclipboard
-//= require jquery.fancybox.pack.js
+//= require jquery.fancybox.pack
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
 //= require global

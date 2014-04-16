@@ -31,19 +31,28 @@ $( document ).ready(function() {
   });
   $(".fancybox").fancybox({
     titleShow: true
+    /*afterShow: function() { 
+        $('<div class="expander"></div>').appendTo(this.inner).click(function() {
+            $(document).toggleFullScreen();
+        });
+    },
+    afterClose: function() {
+        $(document).fullScreen(false);
+    }*/
+  });
+  $(document).bind("fullscreenerror", function() {
+    alert("Browser rejected fullscreen change");
   });
   $('div.photo').hover(function() {
-    $(this).children('a.delete').fadeIn(300);
-    $(this).children('a.share').fadeIn(300);
+    $(this).children('a.delete, a.share, a.edit, p').fadeIn(300);
   }, function() {
-    $(this).children('a.delete').fadeOut(300);
-    $(this).children('a.share').fadeOut(300);
+    $(this).children('a.delete, a.share, a.edit, p').fadeOut(300);
   });
   $('div.photo a.share').click(function(){
     $( "#link_share" ).dialog({
       modal: true,
     });
-    $('.link_share').val($(this).attr("href")).select();
+    $('.link_share').val(window.location.host + $(this).attr("href")).select();
     return false;
   });
   var client = new ZeroClipboard($('#target-to-copy'));
@@ -57,6 +66,7 @@ $( document ).ready(function() {
 
     client.on('complete', function(client, args){
       $('#link_share').after('<p>Text Copied.</p>');
+      $('#link_share').dialog('close');
     });
   });
 
