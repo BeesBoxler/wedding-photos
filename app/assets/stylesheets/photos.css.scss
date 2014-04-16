@@ -10,7 +10,7 @@ div#container{
 }
 
 div.photo{
-	width: 15%;
+	width: 14.5%;
 	padding: 0.75%;
 	margin: 0.25%;
 	-webkit-transition: all 300ms ease;
@@ -45,10 +45,12 @@ div.photo.w2{
 
 div.photo a.share{
     left: 14px;
+    padding: 1px 1px 0 0;
 }
 
 div.photo a.edit{
     right: 52px;
+    padding: 0 0 0 1px;
 }
 
 div.photo a.share, div.photo a.edit{       
@@ -64,7 +66,6 @@ div.photo a.share, div.photo a.edit{
     font: bold 1em/2em Arial, Helvetica;
     text-decoration: none;
     text-align: center;
-    padding: 1px 1px 0 0;
     color: #333;
     text-shadow: 0 1px 0 rgba(255,255,255,.8);
     border-radius: .2em;
@@ -100,7 +101,7 @@ div.photo a.delete{
     font: bold 1em/2em Arial, Helvetica;
     text-decoration: none;
     text-align: center;
-	padding: 0 1px 0 0;
+	padding: 0 0 0 1px;
     color: #330000;
     width: 30px;
     height: 30px;
