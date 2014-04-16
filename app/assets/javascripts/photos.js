@@ -40,11 +40,27 @@ $( document ).ready(function() {
     $(this).children('a.share').fadeOut(300);
   });
   $('div.photo a.share').click(function(){
-    $('body').append('<div id="link_share" style="display:none;"><input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value="'+$(this).attr("href")+'"></input><button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button><p id="target-to-copy-text" style="display:none;">Text Copied.</p></div>');
     $( "#link_share" ).dialog({
       modal: true,
     });
-    $('.link_share').select();
+    $('.link_share').val($(this).attr("href")).select();
     return false;
+  });
+  var client = new ZeroClipboard($('#target-to-copy'));
+
+  client.on('load', function(client){
+    //alert( "movie is loaded" );
+
+    //client.on('datarequested', function(client){
+      //client.setText(this.innerHTML);
+    //});
+
+    client.on('complete', function(client, args){
+      $('#link_share').after('<p>Text Copied.</p>');
+    });
+  });
+
+  client.on('wrongflash noflash', function(){
+    ZeroClipboard.destroy();
   });
 });

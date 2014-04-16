@@ -119,6 +119,8 @@ GEM
       json (>= 1.8.0)
     uuidtools (2.1.4)
     will_paginate (3.0.3)
+    zeroclipboard-rails (0.0.12)
+      railties (>= 3.1)
 
 PLATFORMS
   ruby
@@ -135,3 +137,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   will_paginate
+  zeroclipboard-rails
