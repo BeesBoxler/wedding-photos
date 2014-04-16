@@ -1,5 +1,7 @@
+<h3 id="photo-<%= @photo.id %>-title"></h3>
 <%= image_tag(photo.image.url(:small)) %>
-<%= form_for photo, remote: true do |f| %>
+<span id="photo-<%= @photo.id %>-title"></span>
+<%= form_for photo, remote: true, action: 'update' do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.submit %>

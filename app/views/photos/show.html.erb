@@ -2,8 +2,8 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2> <%= @photo.title %></h2>
-<span><%= @photo.description %></span>
+<h2 id="photo-<%= @photo.id %>-title"> <%= @photo.title %></h2>
+<span id="photo-<%= @photo.id %>-description"><%= @photo.description %></span>
 
 <% if current_user?(@photo.user) %>
 

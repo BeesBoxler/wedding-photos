@@ -1,1 +1,7 @@
-$("#photos").append("Updated");
+<% if !@photo.update_attributes(params[:photo]) %>
+  alert("Failed to update image: <%= j @photo.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $("#photo-<%= @photo.id %>-title").html("<%= j @photo.title %>");
+  $("#photo-<%= @photo.id %>-description").html("<%= j @photo.description %>");
+
+<% end %>
