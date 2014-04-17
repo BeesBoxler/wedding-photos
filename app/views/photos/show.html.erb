@@ -2,17 +2,20 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2> <%= @photo.title %></h2>
-<span><%= @photo.description %></span>
+<div class="content_left content_third photo_details">
+<h2 id="photo-<%= @photo.id %>-title"> <%= @photo.title %></h2>
+<p id="photo-<%= @photo.id %>-description"><%= @photo.description %></p>
+<p>Uploaded by <%= @photo.user.name %></p>
 
 <% if current_user?(@photo.user) %>
-
+<div id="edit_form">
 <%= render 'form' %>
-
+</div>
 <% end -%>
-  
-Uploaded by <%= @photo.user.name %>
+<a id="photo_edit" class="edit" title="Edit Details" href="#"><i class="fa fa-pencil"></i></a>
+<%= link_to 'Back', photos_path, class:"back_button button" %>
+</div>
+
+<div class="content_right content_two_thirds">
 <%= image_tag @photo.image.url(:full) %>
-
-
-<%= link_to 'Back', photos_path %>
+</div>

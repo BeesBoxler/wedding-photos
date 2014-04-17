@@ -464,7 +464,7 @@ button.ui-button::-moz-focus-inner {
 	border-left-width: 1px;
 }
 .ui-dialog {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -476,21 +476,25 @@ button.ui-button::-moz-focus-inner {
 	position: relative;
 }
 .ui-dialog .ui-dialog-title {
-	float: left;
+	/*float: left;
 	margin: .1em 0;
 	white-space: nowrap;
 	width: 90%;
 	overflow: hidden;
-	text-overflow: ellipsis;
+	text-overflow: ellipsis;*/
+	display: none;
 }
 .ui-dialog .ui-dialog-titlebar-close {
 	position: absolute;
-	right: .3em;
-	top: 50%;
-	width: 20px;
+	right: -10px;
+	top: -10px;
 	margin: -10px 0 0 0;
 	padding: 1px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+	border-radius: 30px;
 }
 .ui-dialog .ui-dialog-content {
 	position: relative;
@@ -805,7 +809,7 @@ body .ui-tooltip {
 .ui-widget-content a {
 	color: #444444;
 }
-.ui-widget-header {
+/*.ui-widget-header {
 	border: 1px solid #dddddd;
 	background: #dddddd url("/assets/ui-bg_highlight-soft_50_dddddd_1x100.png") 50% 50% repeat-x;
 	color: #444444;
@@ -813,17 +817,20 @@ body .ui-tooltip {
 }
 .ui-widget-header a {
 	color: #444444;
-}
+}*/
 
 /* Interaction states
 ----------------------------------*/
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-	border: 1px solid #dddddd;
-	background: #f6f6f6 url("/assets/ui-bg_highlight-soft_100_f6f6f6_1x100.png") 50% 50% repeat-x;
+	/*border: 1px solid #ffffff;
+	background: #f6f6f6;
 	font-weight: bold;
-	color: #0073ea;
+	color: #0073ea;*/
+	border: 2px solid #fff;
+	background: #000;
+	color: #fff;
 }
 .ui-state-default a,
 .ui-state-default a:link,

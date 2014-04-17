@@ -1,7 +1,7 @@
 <h1>All photos</h1>
-
+<div class="clear"></div>
+<div class="success message"><%= notice %></div>
 <div id="container">
-
   <%= will_paginate %>
 
   <% @photos.each do |photo| %>
@@ -34,6 +34,6 @@
   <%= will_paginate %>
 </div>
 <div id="link_share">
-  <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value="test"></input>
+  <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value=""></input>
   <button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button>
 </div>

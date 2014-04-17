@@ -10,7 +10,7 @@ div#container{
 }
 
 div.photo{
-	width: 14.5%;
+	width: 18%;
 	padding: 0.75%;
 	margin: 0.25%;
 	-webkit-transition: all 300ms ease;
@@ -55,79 +55,16 @@ div.photo a.edit{
 
 div.photo a.share, div.photo a.edit{       
     display: none;
-    white-space: nowrap;
-    overflow: hidden;
-    background-color: #ccc;
-    background-image: linear-gradient(top, #eee, #ccc);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
-    border: 1px solid #777;
-    width: 30px;
-    height: 30px;
-    font: bold 1em/2em Arial, Helvetica;
-    text-decoration: none;
-    text-align: center;
-    color: #333;
-    text-shadow: 0 1px 0 rgba(255,255,255,.8);
-    border-radius: .2em;
-    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
     position: absolute;
     bottom: 16px;
-	z-index: 100;
 }
-
-div.photo a.share:hover, div.photo a.edit:hover {
-    background-color: #ddd;        
-    background-image: linear-gradient(top, #fafafa, #ddd);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');        
-}
-
-div.photo a.share:active, div.photo a.edit:active {
-    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
-}
-
-div.photo a.share:focus, div.photo a.edit:focus {
-    outline: 0;
-    background: #fafafa;
-}    
 
 div.photo a.delete{
 	display: none;
-    white-space: nowrap;
-    overflow: hidden;
-    background-color: #cc0000;
-    background-image: linear-gradient(top, #ee0000, #cc0000);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ee0000', EndColorStr='#cc0000');
-    border: 1px solid #770000;
-    font: bold 1em/2em Arial, Helvetica;
-    text-decoration: none;
-    text-align: center;
-	padding: 0 0 0 1px;
-    color: #330000;
-    width: 30px;
-    height: 30px;
-    text-shadow: 0 1px 0 rgba(255,0,0,.8);
-    border-radius: .2em;
-    box-shadow: 0 0 1px 1px rgba(255,0,0,.8) inset, 0 1px 0 rgba(0,0,0,.3);
     position: absolute;
-	z-index: 100;
 	bottom: 16px;
 	right: 14px;
 }
-
-div.photo a.delete:hover {
-    background-color: #dd0000;        
-    background-image: linear-gradient(top, #fa0000, #dd0000);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fa0000', EndColorStr='#dd0000');        
-}
-
-div.photo a.delete:active {
-    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
-}
-
-div.photo a.delete:focus {
-    outline: 0;
-    background: #fa0000;
-}    
 
 div.photo p{
     display: none;
@@ -142,6 +79,14 @@ div.photo p{
 
 div#link_share{
     display: none;
+    text-align: center;
+}
+
+input.link_share{
+    display: block;
+    padding: 2px 15px;
+    text-align: center;
+    margin: 12px auto;
 }
 
 div.progress{
@@ -153,6 +98,29 @@ div.progress{
     height:100%;
     background-color:green;
   }
+}
+
+div.photo_details h2{
+    padding: 16px 0;
+}
+
+div.photo_details p{
+    display: inline-block;
+    width: 100%;
+}
+
+div.content_two_thirds img{
+    width: 100%;
+    height: auto;
+}
+
+div#edit_form{
+    display: none;
+}
+
+a.button{
+    width: 25%;
+    padding: 1% 1%;
 }
 
 /*.expander {

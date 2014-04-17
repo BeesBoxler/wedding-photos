@@ -51,6 +51,8 @@ $( document ).ready(function() {
   $('div.photo a.share').click(function(){
     $( "#link_share" ).dialog({
       modal: true,
+      draggable: false,
+      resizable: false,
     });
     $('.link_share').val(window.location.host + $(this).attr("href")).select();
     return false;
@@ -65,12 +67,16 @@ $( document ).ready(function() {
     //});
 
     client.on('complete', function(client, args){
-      $('#link_share').after('<p>Text Copied.</p>');
+      $('.message').fadeIn().append('<h3>Success!</h3><p>The text has been copied to your clipboard.</p>').delay(3000).fadeOut();
       $('#link_share').dialog('close');
     });
   });
 
   client.on('wrongflash noflash', function(){
     ZeroClipboard.destroy();
+  });
+  $('#photo_edit').click(function(){
+    $('#edit_form').show();
+    return false;
   });
 });
