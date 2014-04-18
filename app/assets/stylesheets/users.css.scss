@@ -3,3 +3,160 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'config';
+div#container{
+	width: 99%;
+	margin: 0 auto;
+}
+
+div.photo{
+	width: 31.25%;
+	padding: 0.75%;
+	margin: 0.25%;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+div.photo:hover{
+	background: #dddddd;
+	border-radius: 5px;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+div.photo img{
+	width: 100%;
+	height: auto;
+}
+
+div.photo a{
+	display: inline-block;
+}
+
+div.photo.w2{
+	width: 50%;
+}
+
+div.photo a.share{
+    left: 14px;
+    padding: 1px 1px 0 0;
+}
+
+div.photo a.edit{
+    right: 52px;
+    padding: 0 0 0 1px;
+}
+
+div.photo a.share, div.photo a.edit{       
+    display: none;
+    position: absolute;
+    bottom: 16px;
+}
+
+div.photo a.delete{
+	display: none;
+    position: absolute;
+	bottom: 16px;
+	right: 14px;
+}
+
+div.photo p{
+    display: none;
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+div#link_share{
+    display: none;
+    text-align: center;
+}
+
+input.link_share{
+    display: block;
+    padding: 2px 15px;
+    text-align: center;
+    margin: 12px auto;
+}
+
+div.progress{
+  border: 1px solid #000;
+  border-radius:5px;
+  height:30px;
+  width:200px;
+  div.bar{
+    height:100%;
+    background-color:green;
+  }
+}
+
+div.content_two_thirds img{
+    width: 100%;
+    height: auto;
+}
+
+div.actions label{
+    display: inline-block;
+    width: 100%;
+}
+
+div.actions input{
+    margin-bottom: 12px;
+}
+
+div#edit_form{
+    display: none;
+}
+
+a.back_button{
+    width: 25%;
+    padding: 3%;
+    margin: 50px 0 0 0;
+}
+
+h2.photo_title{
+    padding: 0 0 16px 0;
+    font-size: 2em;
+}
+
+p.photo_description{
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+p.photo_uploader{
+    margin: 15px 0;
+    font-weight: 100;
+}
+
+.pagination{
+    display: none;
+}
+
+#infscr-loading{
+    text-align: center;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background: $blue;
+    display: inline-block;
+    position: fixed;
+    z-index: 100;
+}
+
+#infscr-loading img{
+    width: 30px;
+    height: auto;
+}

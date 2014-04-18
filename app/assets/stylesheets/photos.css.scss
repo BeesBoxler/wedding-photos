@@ -100,27 +100,66 @@ div.progress{
   }
 }
 
-div.photo_details h2{
-    padding: 16px 0;
+div.content_two_thirds img{
+    width: 100%;
+    height: auto;
 }
 
-div.photo_details p{
+div.actions label{
     display: inline-block;
     width: 100%;
 }
 
-div.content_two_thirds img{
-    width: 100%;
-    height: auto;
+div.actions input{
+    margin-bottom: 12px;
 }
 
 div#edit_form{
     display: none;
 }
 
-a.button{
+a.back_button{
     width: 25%;
-    padding: 1% 1%;
+    padding: 3%;
+    margin: 50px 0 0 0;
+}
+
+h2.photo_title{
+    padding: 0 0 16px 0;
+    font-size: 2em;
+}
+
+p.photo_description{
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+p.photo_uploader{
+    margin: 15px 0;
+    font-weight: 100;
+}
+
+.pagination{
+    display: none;
+}
+
+#infscr-loading{
+    text-align: center;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background: $blue;
+    display: inline-block;
+    position: fixed;
+    z-index: 100;
+}
+
+#infscr-loading img{
+    width: 30px;
+    height: auto;
 }
 
 /*.expander {
