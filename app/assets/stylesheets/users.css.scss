@@ -104,12 +104,12 @@ div.content_two_thirds img{
     height: auto;
 }
 
-div.actions label{
+div.field label{
     display: inline-block;
     width: 100%;
 }
 
-div.actions input{
+div.field input{
     margin-bottom: 12px;
 }
 
@@ -123,12 +123,12 @@ a.back_button{
     margin: 50px 0 0 0;
 }
 
-h2.photo_title{
+h2.photo_title, h1.user_title{
     padding: 0 0 16px 0;
     font-size: 2em;
 }
 
-p.photo_description{
+p.photo_description, p.user_description{
     display: inline-block;
     width: 100%;
     font-size: 1.2em;
@@ -137,6 +137,15 @@ p.photo_description{
 p.photo_uploader{
     margin: 15px 0;
     font-weight: 100;
+}
+
+.user_details p{
+	margin-bottom: 10px;
+}
+
+.user_details span{
+	display: block;
+	font-weight: 100;
 }
 
 .pagination{

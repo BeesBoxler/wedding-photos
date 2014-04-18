@@ -92,7 +92,7 @@ $(document).ready(function() {
     nextSelector : '.next_page',  // selector for the NEXT link (to page 2)
     itemSelector : '.photo',     // selector for all items you'll retrieve
     loading: {
-        finishedMsg: '<em>No more pages to load.</em>',
+        finishedMsg: '<em>No more images to load.</em>',
         msgText: "",
         img: '/assets/ajax-loader.png'
       }

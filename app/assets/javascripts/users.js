@@ -55,7 +55,7 @@ $(document).ready(function() {
     });
     return false;
   });
-  $('form.edit_photo').submit(function(){
+  $('form.edit_user').submit(function(){
       $('.message').addClass("success").fadeIn().html('<h3>Success!</h3><p>The photos details have been updated.</p>').delay(3000).fadeOut();
       $('#edit_form').dialog('close');
   });
@@ -65,7 +65,7 @@ $(document).ready(function() {
     nextSelector : '.next_page',  // selector for the NEXT link (to page 2)
     itemSelector : '.photo',     // selector for all items you'll retrieve
     loading: {
-        finishedMsg: '<em>No more pages to load.</em>',
+        finishedMsg: '<em>No more images to load.</em>',
         msgText: "",
         img: '/assets/ajax-loader.png'
       }
