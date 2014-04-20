@@ -25,9 +25,16 @@
 
   </header>
 
-  
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="message <%= name %>">
+        <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
 
-<%= yield %>
+
+  <%= yield %>
 
   <footer>
     <p>Designed and Developed by Alex and Ben</p>
