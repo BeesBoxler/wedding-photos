@@ -83,12 +83,13 @@ $(document).ready(function() {
     return false;
   });
   $('form.edit_photo').submit(function(){
-      $('.message').addClass("success").fadeIn().html('<h3>Success!</h3><p>The photos details have been updated.</p>').delay(3000).fadeOut();
+      $('header').after('<div class="message success"><h3>Success!</h3><p>The photos details have been updated.</p></div>');
+      $('.message').delay(3000).fadeOut();
       $('#edit_form').dialog('close');
   });
   var $container = $('#container');
   $container.infinitescroll({
-    navSelector  : '.pagination',    // selector for the paged navigation 
+    navSelector  : '.pagination',  // selector for the paged navigation 
     nextSelector : '.next_page',  // selector for the NEXT link (to page 2)
     itemSelector : '.photo',     // selector for all items you'll retrieve
     loading: {
