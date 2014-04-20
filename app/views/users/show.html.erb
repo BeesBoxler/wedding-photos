@@ -1,4 +1,3 @@
-<div class="message"><%= notice %></div>
 
 <div class="content_left content_two_thirds">	
 	<h1 class="user_title">My Photos</h1>
@@ -43,11 +42,11 @@
 		<h1 class="user_title">My Details</h1>
 		<p class="user_description">
 		  <span>Name</span>
-		  <%= @user.name %>
+		  <span id="user_name"><%= @user.name %></span>
 		</p>
 		<p class="user_description">
 		  <span>Email</span>
-		  <%= @user.email %>
+		  <span id="user_email"><%= @user.email %></span>
 		</p>
 
 	    <%= link_to raw('<i class="fa fa-pencil"></i>'),

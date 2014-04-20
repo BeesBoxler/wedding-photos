@@ -1,3 +1,6 @@
-<% if @photo.update_attributes(params[:user]) %>
-  alert("User updated");
+<% if @user.update_attributes(params[:user]) %>
+  $('#user_name').html('<%= j @user.name %>')
+  $('#user_email').html('<%= j @user.email %>')
+  <% sign_in @user %>
+
 <% end %>

@@ -66,6 +66,13 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      sign_in @user
+    else
+      sign_in @user
+      flash.now[:error] = "Error, failed to update  user."
+      render @user
+    end
   end
 
   # DELETE /users/1
