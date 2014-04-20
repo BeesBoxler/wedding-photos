@@ -1,7 +1,5 @@
-<h1>Listing photos</h1>
-
+<h1>All photos</h1>
 <div id="container">
-
   <%= will_paginate %>
 
   <% @photos.each do |photo| %>
@@ -12,6 +10,10 @@
                   rel: "wedding",
                   class: "fancybox"  %>
       <% if current_user?(photo.user) %>
+        <%= link_to raw('<i class="fa fa-pencil"></i>'),
+                    photo,
+                    title: "Edit Photo",
+                    class: "edit" %>
         <%= link_to raw('<i class="fa fa-trash-o"></i>'),
                     photo,
                     title: "Delete Photo",
@@ -28,4 +30,8 @@
   <% end %>
 
   <%= will_paginate %>
+</div>
+<div id="link_share">
+  <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value=""></input>
+  <button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button>
 </div>

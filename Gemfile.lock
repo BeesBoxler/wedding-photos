@@ -47,6 +47,8 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -119,6 +121,8 @@ GEM
       json (>= 1.8.0)
     uuidtools (2.1.4)
     will_paginate (3.0.3)
+    zeroclipboard-rails (0.0.12)
+      railties (>= 3.1)
 
 PLATFORMS
   ruby
@@ -126,6 +130,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   coffee-rails (~> 3.2.1)
+  font-awesome-rails
   jquery-fileupload-rails
   jquery-rails
   paperclip
@@ -135,3 +140,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   will_paginate
+  zeroclipboard-rails

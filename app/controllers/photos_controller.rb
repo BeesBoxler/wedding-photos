@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   before_filter :signed_in_user, only: [:update, :destroy]
   def index
-    @photos = Photo.paginate(page: params[:page], per_page: 10)
+    @photos = Photo.paginate(page: params[:page], per_page: 20)
   end
 
   def show
@@ -28,5 +28,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
+    flash[:success] = "Your photo was successfully deleted."
+    redirect_to photos_path
   end
 end

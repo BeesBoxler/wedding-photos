@@ -1,30 +1,66 @@
-<p id="notice"><%= notice %></p>
+<div class="message"><%= notice %></div>
 
-<div class="content_left">	
-	<h2>My Photos</h2>
-	<% if @photos.any? %>
+<div class="content_left content_two_thirds">	
+	<h1 class="user_title">My Photos</h1>
+	<div id="container">
+		<h2>My Photos</h2>
+		<% if @photos.any? %>
 
-		<%= will_paginate @photos %>
-		  <% @photos.each do |photo| %>
-		    <%= image_tag photo.image.url(:small) %>
-		  <% end %>
-		<%= will_paginate @photos %>
-	<% end %>
+			<%= will_paginate @photos %>
+			  <% @photos.each do |photo| %>
+			    <div class="photo">
+			      <%= link_to image_tag( photo.image.url(:small) ),
+			                  photo.image.url(:full),
+			                  title: photo.title,
+			                  rel: "wedding",
+			                  class: "fancybox"  %>
+			      <% if current_user?(photo.user) %>
+			        <%= link_to raw('<i class="fa fa-pencil"></i>'),
+			                    photo,
+			                    title: "Edit Photo",
+			                    class: "edit" %>
+			        <%= link_to raw('<i class="fa fa-trash-o"></i>'),
+			                    photo,
+			                    title: "Delete Photo",
+			                    method: :delete, 
+			                    data: { confirm: 'Are you sure?' },
+			                    class: "delete" %>
+			      <% end %>
+			      <%= link_to raw('<i class="fa fa-link"></i>'),
+			                  photo,
+			                  title: "Share Photo Link",
+			                  class: "share" %>
+			      <p>Uploaded by <%= photo.user.name %></p>
+			    </div>
+			  <% end %>
+			<%= will_paginate @photos %>
+		<% end %>
+	</div>
 </div>
 
 <% if current_user?(@user) %>
-	<div class="content_right">
-		<h2>My Details</h2>
-		<p>
-		  <b>Email:</b>
+	<div class="content_right content_third user_details">
+		<h1 class="user_title">My Details</h1>
+		<p class="user_description">
+		  <span>Name</span>
+		  <%= @user.name %>
+		</p>
+		<p class="user_description">
+		  <span>Email</span>
 		  <%= @user.email %>
 		</p>
 
-		<p>
-		  <b>Name:</b>
-		  <%= @user.name %>
-		</p>
-
-		<%= render 'form' %>
+	    <%= link_to raw('<i class="fa fa-pencil"></i>'),
+	        "#",
+	        title: "Edit Details",
+	        class: "edit",
+	        id: "photo_edit" %>
+		<div id="edit_form">
+			<%= render 'form' %>
+		</div>
 	</div>
 <% end %>
+<div id="link_share">
+  <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value=""></input>
+  <button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button>
+</div>

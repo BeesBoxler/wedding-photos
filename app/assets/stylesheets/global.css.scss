@@ -72,6 +72,11 @@ h1{
   }
 }
 
+h2{
+  padding: 16px;
+  display: inline-block;
+}
+
 .button{
   display: inline-block;
   width: 44.5%;
@@ -135,12 +140,148 @@ h1{
   background: $red_focus;
 }
 
+a.share, a.edit{
+    display: inline-block;    
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #ccc;
+    background-image: linear-gradient(top, #eee, #ccc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+    z-index: 100;
+}
+
+a.share:hover, a.edit:hover {
+    background-color: #ddd;        
+    background-image: linear-gradient(top, #fafafa, #ddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');        
+}
+
+a.share:active, a.edit:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+}
+
+a.share:focus, a.edit:focus {
+    outline: 0;
+    background: #fafafa;
+}    
+
+a.delete{
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #cc0000;
+  background-image: linear-gradient(top, #ee0000, #cc0000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ee0000', EndColorStr='#cc0000');
+  border: 1px solid #770000;
+  font: bold 1em/2em Arial, Helvetica;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 0 0 1px;
+  color: #330000;
+  width: 30px;
+  height: 30px;
+  text-shadow: 0 1px 0 rgba(255,0,0,.8);
+  border-radius: .2em;
+  box-shadow: 0 0 1px 1px rgba(255,0,0,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+  z-index: 100;
+}
+
+a.delete:hover {
+    background-color: #dd0000;        
+    background-image: linear-gradient(top, #fa0000, #dd0000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fa0000', EndColorStr='#dd0000');        
+}
+
+a.delete:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+}
+
+a.delete:focus {
+    outline: 0;
+    background: #fa0000;
+}
+
 .content_left, .content_right{
   position: relative;
-  float: left;
   display: inline-block;
+}
+
+.content_left{
+  float: left;
+}
+
+.content_right{
+  float: right;
+}
+
+.content_half{
   width: 43%;
   padding: 3%;
+}
+
+.content_third{
+  width: 29%;
+  padding: 2%;
+}
+
+.content_two_thirds{
+  width: 62%;
+  padding: 2%;
+}
+
+.message{
+  background-size: 40px 40px;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%,
+                  transparent 50%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, .05) 75%,
+                  transparent 75%, transparent);                                      
+  width: 80%;
+  border: 1px solid;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.info{
+  background-color: #4ea5cd;
+  border-color: #3b8eb5;
+}
+
+.error{
+  background-color: #de4343;
+  border-color: #c43d3d;
+}
+     
+.warning{
+  background-color: #eaaf51;
+  border-color: #d99a36;
+}
+
+.success{
+  background-color: #61b832;
+  border-color: #55a12c;
+}
+
+.message h3{
+  display: inline-block;
+  margin: 0;                                                  
+}
+
+.message p{
+  display: inline-block;
+  margin: 0 0 0 10px;                                                  
 }
 
 footer{

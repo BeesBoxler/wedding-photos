@@ -29,7 +29,8 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'rmagick'
-
+gem 'zeroclipboard-rails'
+gem "font-awesome-rails"
 gem 'will_paginate'
 
 # To use ActiveModel has_secure_password

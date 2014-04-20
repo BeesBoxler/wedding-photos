@@ -1,18 +1,41 @@
 <% content_for :title, @photo.title %>
 
-<p id="notice"><%= notice %></p>
+<div class="content_left content_two_thirds">
+	<%= image_tag @photo.image.url(:full) %>
+</div>
 
-<h2> <%= @photo.title %></h2>
-<span><%= @photo.description %></span>
+<div class="content_right content_third photo_details">
+	<h2 class="photo_title" id="photo-<%= @photo.id %>-title"><%= @photo.title %></h2>
+	<p class="photo_description" id="photo-<%= @photo.id %>-description"><%= @photo.description %></p>
+	<p class="photo_uploader">Uploaded by <%= @photo.user.name %></p>
 
-<% if current_user?(@photo.user) %>
+	<div>
+	<%= link_to raw('<i class="fa fa-link"></i>'),
+		@photo,
+		title: "Share Photo Link",
+		class: "share" %>
 
-<%= render 'form' %>
+	<% if current_user?(@photo.user) %>
+	    <%= link_to raw('<i class="fa fa-pencil"></i>'),
+	        "#",
+	        title: "Edit Details",
+	        class: "edit",
+	        id: "photo_edit" %>
+	    <%= link_to raw('<i class="fa fa-trash-o"></i>'),
+		    @photo,
+		    title: "Delete Photo",
+		    method: :delete, 
+		    data: { confirm: 'Are you sure?' },
+		    class: "delete" %>
+		<div id="edit_form">
+			<%= render 'form' %>
+		</div>
+	<% end -%>
+	</div>
 
-<% end -%>
-  
-Uploaded by <%= @photo.user.name %>
-<%= image_tag @photo.image.url(:full) %>
-
-
-<%= link_to 'Back', photos_path %>
+	<%= link_to 'Back', photos_path, class:"back_button button" %>
+</div>
+<div id="link_share">
+  <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value=""></input>
+  <button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button>
+</div>
