@@ -1,5 +1,6 @@
+var count = 1;
 jQuery(function() {
-  $('#new_photo').fileupload({
+ $('#new_photo').fileupload({
     dataType: "script",
     add: function(e, data) {
       var file, types;
@@ -7,7 +8,9 @@ jQuery(function() {
       file = data.files[0];
       if (types.test(file.type) || types.test(file.name)) {
         data.context = $(tmpl("template-upload", file));
-        $('#new_photo').append(data.context);
+        $("#photos").append("<div class='photo_wrap' id='photo_wrap_"+ count +"'></div>");
+        $("#photo_wrap_" + count).append(data.context);
+        count++;
         return data.submit();
       } else {
         return alert("" + file.name + " is not a gif, jpeg, or png image file");
@@ -19,7 +22,7 @@ jQuery(function() {
         progress = parseInt(data.loaded / data.total * 100, 10);
         return data.context.find('.bar').css('width', progress + '%');
       }
-    }
+    },
   });
   $('#photo_image').attr('name', 'photo[image]');
   $('#photo_image').fileupload();

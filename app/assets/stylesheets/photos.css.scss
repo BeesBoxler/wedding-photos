@@ -162,15 +162,29 @@ p.photo_uploader{
     height: auto;
 }
 
-/*.expander {
+#photos{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.photo_wrap{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    margin: 1.5%;
+    padding: 1%;
+    border: 1px solid #333;
+    background: #777;
+}
+
+.upload{
     position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 25px;
-    height: 25px;
-    padding: 4px;
-    background: white url(http://png-2.findicons.com/files/icons/2232/wireframe_mono/48/expand.png) center center no-repeat;
-    background-size: 25px 25px;
-    z-index: 99999;   
-    cursor: pointer;
-}*/
+    top: 0;
+    left: 0;
+}
+
+.photo_preview img{
+    width: 90%;
+    margin: 5%;
+}
