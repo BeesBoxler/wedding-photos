@@ -1,19 +1,19 @@
 <h1>New photo</h1>
+<div class="content">
 
-<div id="photos"></div>
-
-<%= form_for Photo.new, html: { multipart: true } do |f| %>
-  <%= f.label :image, "Upload photos:" %>
-  <%= f.file_field :image, multiple: true, name: "photo[image]" %>
-<% end %>
-
-<script id="template-upload" type="text/x-tmpl">
-	<div class="upload">
-	  <p>{%=o.name%}</p>
-	  <div class="progress">
-	  	<div class="bar" style="width: 0%"></div>
-	  </div>
+	<%= form_for Photo.new, html: { multipart: true } do |f| %>
+	<div id="upload_functions">
+		<div class="fileUpload button">
+	    <span><i class="fa fa-plus"></i> Add files...</span>
+		  <%= f.file_field :image, multiple: true, name: "photo[image]", class: "upload" %>
+		</div>
+		<div id="progress" class="progress">
+				<div class="bar" style="width:0%;"></div>
+		</div>
+		<%= link_to 'Back', photos_path, class:"back_button button" %>
 	</div>
-</script>
+	<% end %>
 
-<%= link_to 'Back', photos_path, class:"back_button button" %>
+	<div id="photos"></div>
+
+</div>

@@ -1,4 +1,3 @@
-
 @import 'config';
 
 html, body{
@@ -209,6 +208,10 @@ a.delete:active {
 a.delete:focus {
     outline: 0;
     background: #fa0000;
+}
+
+.content {
+  padding: 0 16px;
 }
 
 .content_left, .content_right{

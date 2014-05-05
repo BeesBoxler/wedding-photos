@@ -1,7 +1,6 @@
 <div class="photo_preview">
 	<h3 id="photo-<%= @photo.id %>-title"></h3>
 	<%= image_tag(photo.image.url(:small)) %>
-	<span id="photo-<%= @photo.id %>-title"></span>
 	<%= form_for photo, remote: true, action: 'update' do |f| %>
 	  <%= f.text_field :title, placeholder: "Title" %>
 	  <%= f.submit %>
