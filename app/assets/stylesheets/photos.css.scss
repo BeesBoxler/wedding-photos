@@ -270,7 +270,7 @@ p.photo_uploader{
     display: inline-block;
     width: 20%;
     margin: 1.5%;
-    padding: 1%;
+    padding: 0.5%;
     border: 1px solid #ccc;
     background: #ddd;
     border-radius: 5px;
@@ -280,22 +280,23 @@ p.photo_uploader{
 	width: 100%;
 }
 
-.fileUpload {
-	position: relative;
-	overflow: hidden;
-	margin: 10px;
-	color: #FFF;
-	background: #5CB85C;
-	border-color: #4CAE4C;
+.photo_preview input[type="text"], .photo_preview textarea {
+	width: 98%;
+	display: inline-block;
+	margin: 0 auto;
 }
 
-.fileUpload:hover {
-	color: #FFF;
-	background-color: #47A447;
-	border-color: #398439;
+.photo_preview input[type="text"] {
+	font-size: 1em;
 }
 
-.fileUpload input.upload {
+.photo_preview textarea {
+	height: 40px;
+	font-size: 0.9em;
+	font-family: inherit;
+}
+
+input.fuButton {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -307,9 +308,37 @@ p.photo_uploader{
 	filter: alpha(opacity=0);
 }
 
+.uploadFile {
+	color: #FFF;
+	background: #5CB85C;
+	border-color: #4CAE4C;
+}
+
+.uploadFile:hover {
+	background-color: #47A447;
+	border-color: #398439;
+}
+
+.saveFile {
+	color: #FFF;
+}
+
+.deleteFile {
+  background: $red;
+  color: $background-color;
+}
+
+.deleteFile:hover {
+	background: $red_hover;
+	color: #fff;
+}
+
 .content .button {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
   width: auto;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 1em;
   border-radius: 5px;
   margin: 0;
