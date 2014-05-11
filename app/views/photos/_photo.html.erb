@@ -9,11 +9,9 @@
 	</div>
 	<div class="editFile button">
 		<span><i class="fa fa-pencil"></i></span>
-		<%= f.submit class: "fuButton" %>
 	</div>
 	<div class="deleteFile button">
-		<span><i class="fa fa-trash-o"></i></span>
-		<%= f.submit class: "fuButton" %>
+		<%= link_to raw('<i class="fa fa-trash-o"></i>'), class: "fuButton", method: :delete %>
 	</div>
 	<% end %>
 </div>
