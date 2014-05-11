@@ -4,7 +4,7 @@
 	<%= form_for Photo.new, html: { multipart: true } do |f| %>
 	<div id="upload_functions">
 		<div class="uploadFile button">
-	    <span><i class="fa fa-plus"></i> Add files...</span>
+	    <span><i class="fa fa-plus"></i> Add photos...</span>
 		  <%= f.file_field :image, multiple: true, name: "photo[image]", class: "fuButton" %>
 		</div>
 		<div id="progress" class="progress">

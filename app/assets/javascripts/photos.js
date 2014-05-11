@@ -97,6 +97,7 @@ jQuery(function() {
 	client.on('wrongflash noflash', function(){
 		ZeroClipboard.destroy();
 	});
+
 	$('#photo_edit').click(function(){
 		$('#edit_form').dialog({
 			modal: true,
@@ -116,6 +117,11 @@ jQuery(function() {
         dataType: 'script',
         autoUpload: true,
     }).on('fileuploadadd', function (e, data) {
+				$('#progress').fadeIn().css('display','inline-block');
+        $('#progress .bar').css(
+            'width',
+            '0%'
+        );
     }).on('fileuploadprocessalways', function (e, data) {
 					var file, types;
 					types = /(\.|\/)(gif|jpe?g|png)$/i;
@@ -126,7 +132,6 @@ jQuery(function() {
 						return alert("" + file.name + " is not a gif, jpeg, or png image file");
 					};
     }).on('fileuploadprogressall', function (e, data) {
-        $('#progress').fadeIn();
         var progress = parseInt(data.loaded / data.total * 100, 10);
         console.log(data.loaded);
         console.log(data.total);

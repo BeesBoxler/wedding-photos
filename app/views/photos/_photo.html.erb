@@ -1,17 +1,33 @@
 <div class="photo_preview">
 	<%= image_tag(photo.image.url(:small)) %>
 	<%= form_for photo, remote: true, action: 'update' do |f| %>
-	<%= f.text_field :title, placeholder: "Title" %>
-	<%= f.text_area :description, placeholder: "Description" %>
-	<div class="saveFile button">
-		<span><i class="fa fa-floppy-o"></i></span>
-		<%= f.submit class: "fuButton" %>
-	</div>
-	<div class="editFile button">
-		<span><i class="fa fa-pencil"></i></span>
-	</div>
-	<div class="deleteFile button">
-		<%= link_to raw('<i class="fa fa-trash-o"></i>'), class: "fuButton", method: :delete %>
+	<%= f.text_field :title, placeholder: "Title", disabled: true %>
+	<%= f.text_area :description, placeholder: "Description", disabled: true %>
+	<div class="fuButton_wrap">
+		<div class="saveFile button">
+			<span><i class="fa fa-floppy-o"></i></span>
+			<%= f.submit class: "fuButton" %>
+		</div>
+		<div class="editFile button">
+			<span><i class="fa fa-pencil"></i></span>
+		</div>
+		<div class="deleteFile button">
+			<%= link_to raw('<i class="fa fa-trash-o"></i>'), class: "fuButton", method: :delete %>
+		</div>
 	</div>
 	<% end %>
 </div>
+
+<script type="text/javascript">
+	$('.fuButton_wrap .editFile').click(function(){
+		$(this).css('display', 'none');
+		$('.fuButton_wrap .saveFile').css('display','inline-block');
+		$('input[type="text"], textarea').addClass('photo_edit_details').prop('disabled', false);
+	});
+	$('.fuButton_wrap .saveFile').click(function(){
+		$(this).css('display', 'none');
+		$('.fuButton_wrap .editFile').css('display','inline-block');
+		$('input[type="text"], textarea').removeClass('photo_edit_details').prop('disabled', true);
+		return true;
+	});
+</script>
