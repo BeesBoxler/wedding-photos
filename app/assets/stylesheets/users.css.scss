@@ -143,7 +143,11 @@ p.photo_uploader{
 	margin-bottom: 10px;
 }
 
-.user_details span{
+.user_description span{
+    font-weight: 300;
+}
+
+.user_description span#user_name, .user_description span#user_email{
 	display: block;
 	font-weight: 100;
 }

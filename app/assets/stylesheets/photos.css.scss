@@ -89,15 +89,112 @@ input.link_share{
     margin: 12px auto;
 }
 
-div.progress{
-  border: 1px solid #000;
-  border-radius:5px;
-  height:30px;
-  width:200px;
-  div.bar{
-    height:100%;
-    background-color:green;
-  }
+#progress { 
+	display: none;
+	height: 20px;
+	width: 50%;
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 2px;
+	margin-left: 20px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+	box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+#progress > div {
+	display: inherit;
+	text-align: center;
+	line-height: 20px;
+	height: 100%;
+	   -webkit-border-top-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	       -moz-border-radius-topright: 20px;
+	    -moz-border-radius-bottomright: 20px;
+	           border-top-right-radius: 20px;
+	        border-bottom-right-radius: 20px;
+	    -webkit-border-top-left-radius: 20px;
+	 -webkit-border-bottom-left-radius: 20px;
+	        -moz-border-radius-topleft: 20px;
+	     -moz-border-radius-bottomleft: 20px;
+	            border-top-left-radius: 20px;
+	         border-bottom-left-radius: 20px;
+	background-color: rgb(43,194,83);
+	background-image: -webkit-gradient(
+	  linear,
+	  left bottom,
+	  left top,
+	  color-stop(0, rgb(43,194,83)),
+	  color-stop(1, rgb(84,240,84))
+	 );
+	background-image: -moz-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	-webkit-box-shadow: 
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	-moz-box-shadow: 
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	box-shadow: 
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	position: relative;
+	overflow: hidden;
+}
+#progress > div:after{
+	content: "";
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background-image: 
+	   -webkit-gradient(linear, 0 0, 100% 100%, 
+	      color-stop(.25, rgba(255, 255, 255, .2)), 
+	      color-stop(.25, transparent), color-stop(.5, transparent), 
+	      color-stop(.5, rgba(255, 255, 255, .2)), 
+	      color-stop(.75, rgba(255, 255, 255, .2)), 
+	      color-stop(.75, transparent), to(transparent)
+	   );
+	background-image: 
+		-moz-linear-gradient(
+		  -45deg, 
+	      rgba(255, 255, 255, .2) 25%, 
+	      transparent 25%, 
+	      transparent 50%, 
+	      rgba(255, 255, 255, .2) 50%, 
+	      rgba(255, 255, 255, .2) 75%, 
+	      transparent 75%, 
+	      transparent
+	   );
+	z-index: 1;
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	-webkit-animation: move 2s linear infinite;
+	   -webkit-border-top-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	       -moz-border-radius-topright: 20px;
+	    -moz-border-radius-bottomright: 20px;
+	           border-top-right-radius: 20px;
+	        border-bottom-right-radius: 20px;
+	    -webkit-border-top-left-radius: 20px;
+	 -webkit-border-bottom-left-radius: 20px;
+	        -moz-border-radius-topleft: 20px;
+	     -moz-border-radius-bottomleft: 20px;
+	            border-top-left-radius: 20px;
+	         border-bottom-left-radius: 20px;
+	overflow: hidden;
+}
+
+@-webkit-keyframes move {
+    0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
 }
 
 div.content_two_thirds img{
@@ -162,15 +259,96 @@ p.photo_uploader{
     height: auto;
 }
 
-/*.expander {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 25px;
-    height: 25px;
-    padding: 4px;
-    background: white url(http://png-2.findicons.com/files/icons/2232/wireframe_mono/48/expand.png) center center no-repeat;
-    background-size: 25px 25px;
-    z-index: 99999;   
-    cursor: pointer;
-}*/
+#photos{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.photo_preview{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    margin: 1.5%;
+    padding: 0.5%;
+    border: 1px solid #ccc;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.photo_preview img{
+	width: 100%;
+}
+
+.photo_preview input[type="text"], .photo_preview textarea {
+	width: 98%;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.photo_preview input[type="text"] {
+	font-size: 1em;
+}
+
+.photo_preview textarea {
+	height: 40px;
+	font-size: 0.9em;
+	font-family: inherit;
+}
+
+input.fuButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.uploadFile {
+	color: #FFF;
+	background: #5CB85C;
+	border-color: #4CAE4C;
+}
+
+.uploadFile:hover {
+	background-color: #47A447;
+	border-color: #398439;
+}
+
+.saveFile {
+	color: #FFF;
+}
+
+.deleteFile {
+  background: $red;
+  color: $background-color;
+}
+
+.deleteFile:hover {
+	background: $red_hover;
+	color: #fff;
+}
+
+.content .button {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+  width: auto;
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.content .back_button {
+	float: right;
+}
+
+#upload_functions .back_button, #upload_functions .fileUpload {
+	display: inline-table;
+	vertical-align: baseline;
+}

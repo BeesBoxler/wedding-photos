@@ -1,8 +1,19 @@
-<h3 id="photo-<%= @photo.id %>-title"></h3>
-<%= image_tag(photo.image.url(:small)) %>
-<span id="photo-<%= @photo.id %>-title"></span>
-<%= form_for photo, remote: true, action: 'update' do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-<% end %>
+<div class="photo_preview">
+	<%= image_tag(photo.image.url(:small)) %>
+	<%= form_for photo, remote: true, action: 'update' do |f| %>
+	<%= f.text_field :title, placeholder: "Title" %>
+	<%= f.text_area :description, placeholder: "Description" %>
+	<div class="saveFile button">
+		<span><i class="fa fa-floppy-o"></i></span>
+		<%= f.submit class: "fuButton" %>
+	</div>
+	<div class="editFile button">
+		<span><i class="fa fa-pencil"></i></span>
+		<%= f.submit class: "fuButton" %>
+	</div>
+	<div class="deleteFile button">
+		<span><i class="fa fa-trash-o"></i></span>
+		<%= f.submit class: "fuButton" %>
+	</div>
+	<% end %>
+</div>
