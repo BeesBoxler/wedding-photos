@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash[:error] = 'Email not recognised!'
-      render new
+      redirect_to root_path
     end
   end
 
