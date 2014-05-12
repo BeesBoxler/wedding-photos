@@ -1,6 +1,9 @@
 class Photo < ActiveRecord::Base
   attr_accessible :image, :title, :description
   belongs_to :user
+  has_many :album_photos
+  has_many :albums, through: :album_photos
+  has_many :albums, foreign_key: 'cover_photo'
 
   has_attached_file :image, url: "/assets/:user_id/:photo_id_:user_id_:style.:extension", styles: {
     small: '400x400>',

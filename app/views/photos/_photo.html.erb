@@ -1,7 +1,7 @@
 <div class="photo_preview">
 	<%= image_tag(photo.image.url(:small)) %>
 	<%= form_for photo, remote: true, action: 'update' do |f| %>
-	<%= f.text_field :title, placeholder: "Title", disabled: true %>
+  <%= f.text_field :title, placeholder: "Click to edit title", id: "photo-" + @photo.id.to_s %>
 	<%= f.text_area :description, placeholder: "Description", disabled: true %>
 	<div class="fuButton_wrap">
 		<div class="saveFile button">

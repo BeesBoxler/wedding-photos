@@ -1,0 +1,6 @@
+<h1><%= @album.name %></h1>
+<% @album.photos.each do |p| %>
+  <%= image_tag p.image.url(:small) %>
+  <%= p.title %>
+  <%= p.description %>
+<% end %>

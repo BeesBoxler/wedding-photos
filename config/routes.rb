@@ -1,5 +1,8 @@
 Grit::Application.routes.draw do
 
+  resources :albums
+  get "albums/destroy"
+
   root to: 'static_pages#landing'
 
   resources :sessions, only: [ :new, :create, :destroy ]
