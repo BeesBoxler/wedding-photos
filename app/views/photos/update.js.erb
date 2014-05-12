@@ -1,7 +1,7 @@
 <% if !@photo.update_attributes(params[:photo]) %>
   alert("Failed to update image: <%= j @photo.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  $("#photo-<%= @photo.id %>-title").html("<%= j @photo.title %>");
-  $("#photo-<%= @photo.id %>-description").html("<%= j @photo.description %>");
-
+  $("#title_<%= @photo.id %>").val("<%= j @photo.title %>");
+  $("#description_<%= @photo.id %>").val("<%= j @photo.description %>");
+	$('#photo_preview_<%= @photo.id %>').find('.saveFile').css('display','none');
 <% end %>

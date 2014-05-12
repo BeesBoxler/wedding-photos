@@ -289,6 +289,17 @@ p.photo_uploader{
 	background: transparent;
 	padding: 1%;
 	border-radius: 3px;
+	border: 1px solid #ddd;
+}
+
+.photo_preview input[type="text"]:hover, .photo_preview input[type="text"]:focus, .photo_preview textarea:hover, .photo_preview textarea:focus {
+	border: 1px solid #333!important;
+	background: #fff!important;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 .photo_preview input[type="text"] {
@@ -302,16 +313,6 @@ p.photo_uploader{
 	font-family: inherit;
 	margin: 0px auto 5px;
 	resize: none;
-}
-
-.photo_edit_details {
-	border: 1px solid #333!important;
-	background: #fff!important;
-	-webkit-transition: all 300ms ease;
-	-moz-transition: all 300ms ease;
-	-ms-transition: all 300ms ease;
-	-o-transition: all 300ms ease;
-	transition: all 300ms ease;
 }
 
 .fuButton_wrap {
