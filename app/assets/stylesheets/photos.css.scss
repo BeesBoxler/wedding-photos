@@ -289,6 +289,17 @@ p.photo_uploader{
 	background: transparent;
 	padding: 1%;
 	border-radius: 3px;
+	border: 1px solid #ddd;
+}
+
+.photo_preview input[type="text"]:hover, .photo_preview input[type="text"]:focus, .photo_preview textarea:hover, .photo_preview textarea:focus {
+	border: 1px solid #333!important;
+	background: #fff!important;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 .photo_preview input[type="text"] {
@@ -302,16 +313,6 @@ p.photo_uploader{
 	font-family: inherit;
 	margin: 0px auto 5px;
 	resize: none;
-}
-
-.photo_edit_details {
-	border: 1px solid #333!important;
-	background: #fff!important;
-	-webkit-transition: all 300ms ease;
-	-moz-transition: all 300ms ease;
-	-ms-transition: all 300ms ease;
-	-o-transition: all 300ms ease;
-	transition: all 300ms ease;
 }
 
 .fuButton_wrap {
@@ -355,24 +356,6 @@ input.fuButton {
 .deleteFile:hover {
 	background: $red_hover;
 	color: #fff;
-}
-
-.saveFile, .editFile {
-  white-space: nowrap;
-  overflow: hidden;
-  background-color: #ccc;
-  background-image: linear-gradient(top, #eee, #ccc);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
-  border: 1px solid #777;
-  font: bold 1em/2em Arial, Helvetica;
-  text-decoration: none;
-  text-align: center;
-  color: #333;
-  text-shadow: 0 1px 0 rgba(255,255,255,.8);
-  border-radius: .2em;
-  box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
-  z-index: 100;
-  padding: 2px 12px!important;
 }
 
 .content .button {
