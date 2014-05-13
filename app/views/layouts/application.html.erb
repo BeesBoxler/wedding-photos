@@ -23,14 +23,15 @@
     <h1><%= link_to "Grit and Drew's Wedding Album", root_path %></h1>
 
   </header>
-
-  <% flash.each do |name, msg| %>
-    <% if msg.is_a?(String) %>
-      <div class="message <%= name %>">
-        <%= msg %>
-      </div>
+  <section id="notices">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div class="message <%= name %>">
+          <%= msg %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </section>
 
 
   <%= yield %>

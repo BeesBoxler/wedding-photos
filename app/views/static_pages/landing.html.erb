@@ -14,7 +14,7 @@
   </div>
   <div id="new_user">
     <a href="#" class="button">This is my first time</a>
-    <%= form_for(@user) do |f| %>
+    <%= form_for @user do |f| %>
       <%= f.text_field :email, placeholder: "Email address" %>
       <%= f.text_field :name, placeholder: "Your name" %>
       <%= f.submit "Register", class: "button" %>

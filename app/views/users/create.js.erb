@@ -1,0 +1,6 @@
+<% if @user.new_record? %>
+  $('#notices').append("<div class='message error'> <%= j @user.errors.full_messages.join(', ').html_safe %>")
+<% else %>
+  <% sign_in(@user) %>
+  <% redirect_to root_path %>
+<% end %>

@@ -56,7 +56,12 @@ class UsersController < ApplicationController
         }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: "new" }
+        format.html { 
+          @user.errors.full_messages.each do |msg|
+            flash[:error] = msg.split(' ')[1..-1].join(' ')
+          end
+          redirect_to root_path
+        }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
