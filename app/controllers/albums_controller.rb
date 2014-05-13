@@ -9,12 +9,14 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    @photos = Photo.all
   end
 
   def create
-    @album = Album.new(params[:album])
+    @user = current_user
+    @album = @user.albums.create(params[:album])
     if @album.save
-      render 'index'
+      redirect_to @album
     else
       render 'new'
     end

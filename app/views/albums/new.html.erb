@@ -4,5 +4,11 @@
   <%= f.text_field :name %>
   <%= f.label :name %>
   <br>
+
+  <% @photos.each do |p| %>
+    <%= image_tag p.image.url(:small), class: 'checkbox' %>
+    <%= check_box_tag "album[photo_ids][]", p.id %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
