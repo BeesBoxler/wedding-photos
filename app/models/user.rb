@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name
 
   has_many :photos
+  has_many :albums
 
   validates :name,  presence: true, length: { maximum: 50, minimum: 1 }
 

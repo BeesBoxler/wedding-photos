@@ -8,9 +8,16 @@ class AlbumsController < ApplicationController
   end
 
   def new
+    @album = Album.new
   end
 
   def create
+    @album = Album.new(params[:album])
+    if @album.save
+      render 'index'
+    else
+      render 'new'
+    end
   end
 
   def edit

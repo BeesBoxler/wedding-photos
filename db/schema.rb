@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140512183625) do
+ActiveRecord::Schema.define(:version => 20140513105436) do
 
   create_table "album_photos", :force => true do |t|
     t.integer  "album_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20140512183625) do
     t.integer  "cover_photo"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
 
   create_table "photos", :force => true do |t|
