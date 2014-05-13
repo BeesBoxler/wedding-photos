@@ -23,7 +23,7 @@
     <h1><%= link_to "Grit and Drew's Wedding Album", root_path %></h1>
 
   </header>
-  <section id="notices">
+  <div id="notices">
     <% flash.each do |name, msg| %>
       <% if msg.is_a?(String) %>
         <div class="message <%= name %>">
@@ -31,7 +31,7 @@
         </div>
       <% end %>
     <% end %>
-  </section>
+  </div>
 
 
   <%= yield %>

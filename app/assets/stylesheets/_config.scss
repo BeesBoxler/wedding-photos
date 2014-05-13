@@ -1,7 +1,7 @@
 $background-color: #f7f7f7;
-$blue: #007DD1;
-$blue_hover: #006BB3;
-$blue_focus: #0066AB;
+$blue: #1c7ca4;
+$blue_hover: darken($blue, 5%);
+$blue_focus: $blue_hover;
 $red: #c40000;
 $red_hover: #a80000;
 $red_focus: #a20000;
