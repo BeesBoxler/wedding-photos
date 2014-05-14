@@ -5,6 +5,8 @@ class Album < ActiveRecord::Base
   belongs_to :photo, foreign_key: 'cover_photo'
   belongs_to :user
   before_validation :set_cover_photo
+  validates :name, presence: true
+  validates :cover_photo, presence: { message: "You need to select at least one photo." }
 
   private 
 

@@ -18,7 +18,10 @@ class AlbumsController < ApplicationController
     if @album.save
       redirect_to @album
     else
-      render 'new'
+      @album.errors.full_messages.each do |e|
+        flash[:error] = e
+      end
+      redirect_to new_album_path
     end
   end
 

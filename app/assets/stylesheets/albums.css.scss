@@ -1,3 +1,14 @@
 // Place all the styles related to the Albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'config';
+
+.checkbox-photo{
+  max-width:150px;
+  max-height:150px; 
+}
+
+input[type=checkbox]:checked ~ .checkbox-photo{
+  border: 3px solid $blue;
+  
+}
