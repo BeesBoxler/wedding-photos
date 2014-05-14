@@ -2,17 +2,19 @@
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-//$(function() {
+$(function() {
   $("#return_user > a").click(function() {
     $(this).fadeOut(300);
     $("#new_user > a").fadeOut(300);
     $("#return_user form").delay(300).fadeIn(300);
+    $('#notices').html('');
     return false;
   });
   $("#new_user > a").click(function() {
     $(this).fadeOut(300);
     $("#return_user > a").fadeOut(300);
     $("#new_user form").delay(300).fadeIn(300);
+    $('#notices').html('');
     return false;
   });
   $("#login form > a.back_button").click(function() {
@@ -20,6 +22,7 @@
     $("#return_user a").delay(400).fadeIn(300);
     return false;
   });
+});
 /*  $("#submit_new").click(function(){ 
     var nameVal = $("#name_new").val();
     if(nameVal == ''){
