@@ -47,3 +47,6 @@ gem 'will_paginate'
 
 # To use debugger
 # gem 'debugger'
+
+# UPLOADING WITH CARRIERWAVE
+gem 'carrierwave_direct'
