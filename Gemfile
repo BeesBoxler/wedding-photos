@@ -50,3 +50,4 @@ gem 'will_paginate'
 
 # UPLOADING WITH CARRIERWAVE
 gem 'carrierwave_direct'
+gem 'fog'

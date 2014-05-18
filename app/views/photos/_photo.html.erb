@@ -1,5 +1,5 @@
 <div class="photo_preview" id="photo_preview_<%= @photo.id %>">
-	<%= image_tag(photo.image.url(:small)) %>
+	<%= image_tag(photo.image.url) %>
 	<%= form_for photo, remote: true, action: 'update' do |f| %>
 	<%= f.text_field :title, placeholder: "Click to edit title", id: "title_#{ @photo.id }" %>
 	<%= f.text_area :description, placeholder: "Click to edit description", id: "description_#{ @photo.id }" %>
