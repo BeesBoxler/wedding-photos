@@ -1,7 +1,7 @@
 <h1><%= @album.name %></h1>
 <h2>Created by <%= @album.user.name %></h2>
 <% @album.photos.each do |p| %>
-  <%= image_tag p.image.url(:small) %>
+  <%= image_tag p.image.url(:thumb) %>
   <%= p.title %>
   <%= p.description %>
 <% end %>

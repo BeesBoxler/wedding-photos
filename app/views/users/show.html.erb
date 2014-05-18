@@ -1,13 +1,19 @@
 <div class="content_left content_two_thirds">	
-	<h1 class="user_title">My Photos</h1>
+	<h1 class="user_title">
+		<% if @user == current_user %>
+			My Photos
+		<% else %>
+			<%= ownership @user %> Photos
+		<% end %>
+	</h1>
 	<div id="container">
 		<% if @photos.any? %>
 
 			<%= will_paginate @photos %>
 			  <% @photos.each do |photo| %>
 			    <div class="photo">
-			      <%= link_to image_tag( photo.image.url(:small) ),
-			                  photo.image.url(:full),
+			      <%= link_to image_tag( photo.image.url(:thumb) ),
+			                  photo.image.url,
 			                  title: photo.title,
 			                  rel: "wedding",
 			                  class: "fancybox"  %>
@@ -27,7 +33,9 @@
 			                  photo,
 			                  title: "Share Photo Link",
 			                  class: "share" %>
-			      <p>Uploaded by <%= photo.user.name %></p>
+			      <% if photo.title %>
+			      	<p><%= photo.title %></p>
+			      <% end %>
 			    </div>
 			  <% end %>
 			<%= will_paginate @photos %>

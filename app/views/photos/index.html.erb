@@ -5,7 +5,7 @@
   <% @photos.each do |photo| %>
     <div class="photo">
       <%= link_to image_tag( photo.image.url ),
-                  photo.image.url,
+                  photo.image.url(:thumb),
                   title: photo.title,
                   rel: "wedding",
                   class: "fancybox"  %>

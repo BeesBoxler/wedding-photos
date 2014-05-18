@@ -2,5 +2,5 @@
 
 <% @albums.each do |a| %>
   <%= a.name %>
-  <%= image_tag a.photo.image.url(:small) %>
+  <%= image_tag a.photo.image.url(:thumb) %>
 <% end %>

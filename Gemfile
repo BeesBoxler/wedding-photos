@@ -28,7 +28,7 @@ gem 'jquery-rails'
 
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'zeroclipboard-rails'
 gem "font-awesome-rails"
 gem 'will_paginate'
