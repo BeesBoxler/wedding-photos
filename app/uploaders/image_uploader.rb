@@ -2,6 +2,8 @@
 
 class ImageUploader < CarrierWave::Uploader::Base
 
+  include ::CarrierWave::Backgrounder::Delay
+
   # include Carrierwave::Compatibility::Paperclip
 
   # Include RMagick or MiniMagick support:
@@ -47,7 +49,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "#{secure_token(10)}_#{model.user.name.underscore.downcase}.#{file.extension}" if original_filename
+    "#{secure_token(10)}_#{model.user.name.downcase.split.join}.#{file.extension}" if original_filename
   end
 
   protected

@@ -30,7 +30,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'mini_magick'
 gem 'zeroclipboard-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'will_paginate'
 
 # To use ActiveModel has_secure_password
@@ -51,3 +51,5 @@ gem 'will_paginate'
 # UPLOADING WITH CARRIERWAVE
 gem 'carrierwave_direct'
 gem 'fog'
+gem 'resque'
+gem 'carrierwave_backgrounder'

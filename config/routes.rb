@@ -1,4 +1,9 @@
+require 'resque/server'
+
+
 Grit::Application.routes.draw do
+
+  mount Resque::Server.new, at: "/resque"
 
   resources :albums
   get "albums/destroy"

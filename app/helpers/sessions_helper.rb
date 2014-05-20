@@ -28,7 +28,7 @@ module SessionsHelper
 
   def signed_in_user
     unless signed_in?
-      redirect_to signin_url, notice: "Please sign in."
+      redirect_to root_path, notice: "Please sign in."
     end
   end
 

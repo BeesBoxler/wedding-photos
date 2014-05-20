@@ -6,6 +6,7 @@ class Photo < ActiveRecord::Base
   has_many :albums, foreign_key: 'cover_photo'
 
   mount_uploader :image, ImageUploader, mount_on: :image_file_name
+  process_in_background :image
 
   # has_attached_file :image, url: "/assets/:user_id/:photo_id_:user_id_:style.:extension", styles: {
   #   small: '400x400>',
