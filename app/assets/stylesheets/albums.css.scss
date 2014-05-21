@@ -3,12 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'config';
 
+div#photos{
+	margin-top: 20px;
+}
+
 .checkbox-photo{
   max-width:150px;
   max-height:150px; 
 }
 
-input[type=checkbox]:checked ~ .checkbox-photo{
-  border: 3px solid $blue;
-  
+div.photo img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+div.photo{
+	display: inline-block;
+}
+
+div.photo:hover label{
+	background: $blue;
+}
+
+#new_album span{
+	margin-left: 20px;
+	font-style: italic;
+	color: #444;
+}
+
+input[type=checkbox]{
+	display: none;
+}
+
+input[type=checkbox] + label{
+	padding: 4px;
+	display: inline-block;
+}
+input[type=checkbox]:checked + label{
+	background: $blue;
 }
