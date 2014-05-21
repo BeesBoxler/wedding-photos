@@ -6,7 +6,7 @@
   <br>
 
   <% @photos.each do |p| %>
-    <%= label_tag dom_id(p), (image_tag p.image.url(:small), class: 'checkbox-photo') %>
+    <%= label_tag dom_id(p), (image_tag processed?(p), class: 'checkbox-photo') %>
     <%= check_box_tag "album[photo_ids][]", p.id, @album.photo_ids.include?(p.id), id: dom_id(p), class: 'checkbox' %>
   <% end %>
 
