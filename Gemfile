@@ -53,3 +53,5 @@ gem 'carrierwave_direct'
 gem 'fog'
 gem 'resque'
 gem 'carrierwave_backgrounder'
+
+gem 'hirefire-resource'

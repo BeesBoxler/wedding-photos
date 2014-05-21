@@ -80,6 +80,7 @@ GEM
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     hike (1.2.3)
+    hirefire-resource (0.3.2)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-fileupload-rails (0.4.1)
@@ -187,6 +188,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   fog
   font-awesome-rails
+  hirefire-resource
   jquery-fileupload-rails
   jquery-rails
   mini_magick
