@@ -1,35 +1,52 @@
 <h1>All photos</h1>
 <div id="container">
-  <%= will_paginate %>
 
-  <% @photos.each do |photo| %>
-    <div class="photo">
-      <%= link_to image_tag( processed?(photo) ),
-                  photo.image.url,
-                  title: photo.title,
-                  rel: "wedding",
-                  class: "fancybox"  %>
-      <% if current_user?(photo.user) %>
-        <%= link_to raw('<i class="fa fa-pencil"></i>'),
+  <section id="photos">
+
+    <%= will_paginate @photos, param_name: 'photo_page' %>
+
+    <% @photos.each do |photo| %>
+      <div class="photo">
+        <%= link_to image_tag( processed?(photo) ),
+                    photo.image.url,
+                    title: photo.title,
+                    rel: "wedding",
+                    class: "fancybox"  %>
+        <% if current_user?(photo.user) %>
+          <%= link_to raw('<i class="fa fa-pencil"></i>'),
+                      photo,
+                      title: "Edit Photo",
+                      class: "edit" %>
+          <%= link_to raw('<i class="fa fa-trash-o"></i>'),
+                      photo,
+                      title: "Delete Photo",
+                      method: :delete, 
+                      data: { confirm: 'Are you sure?' },
+                      class: "delete" %>
+        <% end %>
+        <%= link_to raw('<i class="fa fa-link"></i>'),
                     photo,
-                    title: "Edit Photo",
-                    class: "edit" %>
-        <%= link_to raw('<i class="fa fa-trash-o"></i>'),
-                    photo,
-                    title: "Delete Photo",
-                    method: :delete, 
-                    data: { confirm: 'Are you sure?' },
-                    class: "delete" %>
+                    title: "Share Photo Link",
+                    class: "share" %>
+        <p>Uploaded by <%= photo.user.name %></p>
+      </div>
+    <% end %>
+
+    <%= will_paginate @photos, param_name: 'photo_page' %>
+
+  </section>
+
+  <section id="albums">
+    <h1>Photo Albums</h1>
+    <div id="photos">
+      <% @albums.each do |a| %>
+        <div class="photo">
+          <span class="title"><%= a.name %></span>
+          <%= link_to image_tag( processed?(a.photo) ), album_path(a) %>
+        </div>
       <% end %>
-      <%= link_to raw('<i class="fa fa-link"></i>'),
-                  photo,
-                  title: "Share Photo Link",
-                  class: "share" %>
-      <p>Uploaded by <%= photo.user.name %></p>
     </div>
-  <% end %>
-
-  <%= will_paginate %>
+  </section>
 </div>
 <div id="link_share">
   <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value=""></input>

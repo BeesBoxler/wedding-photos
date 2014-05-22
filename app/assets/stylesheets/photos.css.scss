@@ -7,6 +7,14 @@
 div#container{
 	width: 99%;
 	margin: 0 auto;
+  section#photo{
+    width:50%;
+    float:left;
+  }
+  section#albums{
+    width:49%;
+    float:right;
+  }
 }
 
 div.photo{

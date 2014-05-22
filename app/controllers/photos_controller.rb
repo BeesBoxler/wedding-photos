@@ -1,7 +1,8 @@
 class PhotosController < ApplicationController
   before_filter :signed_in_user, only: [:create, :update, :destroy, :new, :edit]
   def index
-    @photos = Photo.paginate(page: params[:page], per_page: 20)
+    @photos = Photo.paginate(page: params[:photo_page], per_page: 20)
+    @albums = Album.paginate(page: params[:album_page], per_page: 20)
   end
 
   def show

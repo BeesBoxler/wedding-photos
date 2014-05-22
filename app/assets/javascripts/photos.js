@@ -1,5 +1,5 @@
 jQuery(function() {
-	$('#container').masonry({
+	$('#content').masonry({
 		itemSelector: '.photo'
 	});
 	$(".fancybox").fancybox({
