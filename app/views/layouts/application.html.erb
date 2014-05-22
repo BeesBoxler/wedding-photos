@@ -15,7 +15,8 @@
       <% if signed_in? %>
         <%= link_to "Sign out", signout_path, method: :delete %>
         <%= link_to "My Account", user_path(current_user) %>
-        <%= link_to "Upload photo", new_photo_path %>
+        <%= link_to "New Album", new_album_path %>
+        <%= link_to "Upload Photo", new_photo_path %>
         <%= link_to "All Photos", photos_path %>
       <% end %>
     </nav>

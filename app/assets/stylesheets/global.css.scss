@@ -50,7 +50,7 @@ header nav a{
 }
 
 header nav a:hover, header nav a:focus{
-  background: #007ACC;
+  background: $blue_hover;
   -webkit-box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 3px 0 rgba(0,0,0,0.6);
   box-shadow:0 0 7px 0 rgba(255,255,255,0.3), inset 1px 1px 3px 0 rgba(0,0,0,0.6);
   color: #ffffff;
