@@ -3,23 +3,54 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'config';
 
+h2{
+	font-size: 1.2em;
+	font-weight: 300;
+	font-style: italic;
+	color: #333;
+}
+
 div#photos{
 	margin-top: 20px;
 }
 
 .checkbox-photo{
-  max-width:150px;
-  max-height:150px; 
+	max-width:150px;
+	max-height:150px; 
 }
 
 div.photo img{
-	width: 100%;
 	height: auto;
 	display: block;
+	padding: 4px;
 }
 
 div.photo{
 	display: inline-block;
+	position: relative;
+}
+
+div.photo:hover{
+	background: #ddd;
+	border-radius: 5px;
+}
+
+div.photo p{
+    display: none;
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+div.photo p.desc{
+	top: 47px;
+    font-size: 12px;
+    font-weight: 300;
 }
 
 div.photo:hover label{
@@ -37,7 +68,6 @@ input[type=checkbox]{
 }
 
 input[type=checkbox] + label{
-	padding: 4px;
 	display: inline-block;
 }
 input[type=checkbox]:checked + label{

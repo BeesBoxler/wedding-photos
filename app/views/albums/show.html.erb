@@ -1,7 +1,23 @@
+<% content_for :title, @album.name.html_safe %>
+
 <h1><%= @album.name %></h1>
 <h2>Created by <%= @album.user.name %></h2>
-<% @album.photos.each do |p| %>
-  <%= image_tag p.image.url(:thumb) %>
-  <%= p.title %>
-  <%= p.description %>
-<% end %>
+<div class="content">
+	<div id="photos">
+		<% @album.photos.each do |p| %>
+			<div class="photo">
+				<%= link_to image_tag( processed?(p) ),
+                  p.image.url,
+                  title: p.title,
+                  rel: "wedding",
+                  class: "fancybox"  %>
+				<% if !p.title.nil? %>
+				<p class="title"><%= p.title %></p>
+				<% end %>
+				<% if !p.description.nil? %>
+				<p class="desc"><%= p.description %></p>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>
