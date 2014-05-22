@@ -1,10 +1,10 @@
 module PhotosHelper
 
-  def processed?(image)
+  def processed?(image, size)
     if image.image_processing
       image.image.url
     else
-      image.image.url(:thumb)
+      image.image.url(size)
     end
   end
   

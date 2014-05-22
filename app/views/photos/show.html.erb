@@ -1,7 +1,7 @@
 <% content_for :title, @photo.title %>
 
 <div class="content_left content_two_thirds">
-	<%= image_tag @photo.image.url %>
+	<%= image_tag processed?(@photo, :large) %>
 </div>
 
 <div class="content_right content_third photo_details">

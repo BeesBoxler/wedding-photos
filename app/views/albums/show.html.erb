@@ -6,8 +6,8 @@
 	<div id="photos">
 		<% @album.photos.each do |p| %>
 			<div class="photo">
-				<%= link_to image_tag( processed?(p) ),
-                  p.image.url,
+				<%= link_to image_tag( processed?(p, :thumb) ),
+                  processed?(p, :large),
                   title: p.title,
                   rel: "wedding",
                   class: "fancybox"  %>

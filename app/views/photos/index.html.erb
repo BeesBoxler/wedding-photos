@@ -7,8 +7,8 @@
 
     <% @photos.each do |photo| %>
       <div class="photo">
-        <%= link_to image_tag( processed?(photo) ),
-                    photo.image.url,
+        <%= link_to image_tag( processed?(photo, :thumb) ),
+                    processed?(photo, :large),
                     title: photo.title,
                     rel: "wedding",
                     class: "fancybox"  %>
@@ -42,7 +42,7 @@
       <% @albums.each do |a| %>
         <div class="photo">
           <span class="title"><%= a.name %></span>
-          <%= link_to image_tag( processed?(a.photo) ), album_path(a) %>
+          <%= link_to image_tag( processed?(a.photo, :thumb) ), album_path(a) %>
         </div>
       <% end %>
     </div>
