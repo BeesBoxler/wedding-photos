@@ -1,13 +1,13 @@
-<% content_for :title, "All Albums"
+<% content_for :title, "All Albums" %>
 
 <h1>Photo Albums</h1>
 <div class="content">
 	<div id="photos">
 		<% @albums.each do |a| %>
-		<div class="photo">
-			<span class="title"><%= a.name %></span>
-			<%= link_to image_tag( processed?(a.photo) ), album_path(a) %>
-		</div>
+  		<div class="photo">
+  			<span class="title"><%= a.name %></span>
+  			<%= link_to image_tag( processed?(a.photo) ), album_path(a) %>
+  		</div>
 		<% end %>
 	</div>
 </div>
