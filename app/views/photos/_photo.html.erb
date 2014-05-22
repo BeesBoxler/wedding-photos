@@ -18,5 +18,8 @@
 	$('#photo_preview_<%= @photo.id %> input, #photo_preview_<%= @photo.id %> textarea').bind("change paste keyup", function() {
 		$('#photo_preview_<%= @photo.id %>').find('.saveFile').css('display','inline-block');
 	});
+	$('#photo_preview_<%= @photo.id %> .fuButton').click(function(){
+		$('#photo_preview_<%= @photo.id %>').find('input, textarea').css('border', '1px solid #00C903').animate({'borderColor': 'transparent'});
+	});
 </script>
 </div>
