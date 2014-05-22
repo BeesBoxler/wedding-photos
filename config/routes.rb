@@ -5,8 +5,9 @@ Grit::Application.routes.draw do
 
   mount Resque::Server.new, at: "/resque"
 
+  match "albums/remove_photo", to: 'albums#remove_photo'
   resources :albums
-  get "albums/destroy"
+  
 
   root to: 'static_pages#landing'
 

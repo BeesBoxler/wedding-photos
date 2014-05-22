@@ -31,6 +31,16 @@ class AlbumsController < ApplicationController
   def update
   end
 
+  def remove_photo
+    @album = Album.find(params[:id])
+    @photo = Photo.find(params[:photo_id])
+    @album.photos.destroy(@photo)
+
+    redirect_to @album
+  end
+
   def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
   end
 end

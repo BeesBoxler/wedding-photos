@@ -11,6 +11,7 @@
                   title: p.title,
                   rel: "wedding",
                   class: "fancybox"  %>
+        <%= link_to "delete", { id: @album.id, controller: "albums", action: "remove_photo", photo_id: p.id }, method: :delete %>
 				<% if !p.title.nil? %>
 				<p class="title"><%= p.title %></p>
 				<% end %>
