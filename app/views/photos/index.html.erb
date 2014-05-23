@@ -4,8 +4,8 @@
     <%= will_paginate @photos, param_name: 'photo_page' %>
     <% @photos.each do |photo| %>
       <div class="photo single">
-        <%= link_to image_tag( processed?(photo) ),
-                    photo.image.url,
+        <%= link_to image_tag( processed?(photo, :thumb) ),
+                    processed?(photo, :large),
                     title: photo.title,
                     rel: "wedding",
                     class: "fancybox"  %>
@@ -33,6 +33,7 @@
 
   </section>
   <section id="albums">
+<<<<<<< HEAD
     <% if !@albums.empty? %>
     <%= will_paginate @albums, param_name: 'album_page' %>
 
@@ -45,6 +46,17 @@
     <%= will_paginate @albums, param_name: 'album_page' %>
     <% else %>
     <p>Unfortunatley there are no albums yet.</p>
+=======
+    <h1>Photo Albums</h1>
+    <div id="photos">
+      <% @albums.each do |a| %>
+        <div class="photo">
+          <span class="title"><%= a.name %></span>
+          <%= link_to image_tag( processed?(a.photo, :thumb) ), album_path(a) %>
+        </div>
+      <% end %>
+    </div>
+>>>>>>> 958db29e6cc8c96215b68e6f94b87705f176dd9d
   </section>
 </div>
 <div id="link_share">

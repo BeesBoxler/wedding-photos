@@ -14,8 +14,8 @@
 			<%= will_paginate @photos %>
 			  <% @photos.each do |photo| %>
 			    <div class="photo">
-			      <%= link_to image_tag( photo.image.url(:thumb) ),
-			                  photo.image.url,
+			      <%= link_to image_tag( processed?(photo, :thumb) ),
+			                  processed?(photo, :large),
 			                  title: photo.title,
 			                  rel: "wedding",
 			                  class: "fancybox"  %>
