@@ -11,11 +11,23 @@
                   title: p.title,
                   rel: "wedding",
                   class: "fancybox"  %>
-        <%= link_to "delete", { id: @album.id, controller: "albums", action: "remove_photo", photo_id: p.id }, method: :delete %>
-				<% if !p.title.nil? %>
+				<% if current_user?(@album.user) %>
+				<%= link_to raw('<i class="fa fa-trash-o"></i>'),
+					{ 
+						id: @album.id, 
+						controller: "albums", 
+						action: "remove_photo", 
+						photo_id: p.id 
+					},
+					title: "Delete Photo",
+					method: :delete, 
+					data: { confirm: 'Are you sure?' },
+					class: "delete" %>
+				<% end %>
+				<% if !p.title.nil? && !p.title.empty? %>
 				<p class="title"><%= p.title %></p>
 				<% end %>
-				<% if !p.description.nil? %>
+				<% if !p.description.nil? && !p.description.empty? %>
 				<p class="desc"><%= p.description %></p>
 				<% end %>
 			</div>

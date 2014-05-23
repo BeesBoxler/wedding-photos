@@ -82,6 +82,14 @@ input[type=checkbox]{
 input[type=checkbox] + label{
 	display: inline-block;
 }
+
 input[type=checkbox]:checked + label{
 	background: $blue;
+}
+
+div.photo a.delete{
+	display: none;
+    position: absolute;
+	bottom: 16px;
+	right: 14px;
 }
