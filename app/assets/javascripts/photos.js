@@ -46,15 +46,15 @@ jQuery(function() {
 			}
 		},
 		// trigger Masonry as a callback
-    function( newElements ) {
-      // hide new items while they are loading
-      var $newElems = $( newElements ).css({ opacity: 0 });
-      // ensure that images load before adding to masonry layout
-      $newElems.imagesLoaded(function(){
-        // show elems now they're ready
-        $newElems.animate({ opacity: 1 });
-        $container.masonry( 'appended', $newElems, true );
-      });
+	function( newElements ) {
+	  // hide new items while they are loading
+	  var $newElems = $( newElements ).css({ opacity: 0 });
+	  // ensure that images load before adding to masonry layout
+	  $newElems.imagesLoaded(function(){
+		// show elems now they're ready
+		$newElems.animate({ opacity: 1 });
+		$container.masonry( 'appended', $newElems, true );
+	  });
 			$('div.photo').hover(function() {
 				$(this).children('a.delete, a.share, a.edit, p').fadeIn(300);
 			}, function() {
@@ -97,7 +97,7 @@ jQuery(function() {
 					$('.message').delay(3000).fadeOut();
 					$('#edit_form').dialog('close');
 			});
-    }
+	}
 	);
 	$('div.photo').hover(function() {
 		$(this).children('a.delete, a.share, a.edit, p').fadeIn(300);
@@ -142,14 +142,19 @@ jQuery(function() {
 			$('.message').delay(3000).fadeOut();
 			$('#edit_form').dialog('close');
 	});
+	$('div#photos').masonry({
+		itemSelector: '.photo_preview',
+		isFitWidth: true,
+	});
 	$('#new_photo').fileupload({
-        dataType: 'script',
-        autoUpload: true,
-    }).on('fileuploadadd', function (e, data) {
-        $.each(data.files, function () {
-        	$('#photos').append('<div class="photo_preview"><img class="ajax-loader" src="/assets/ajax-loader.png" /></div>');
-        });
-		// add item to masonry
+		dataType: 'script',
+		autoUpload: true,
+	}).on('fileuploadadd', function (e, data) {
+		$.each(data.files, function () {
+			var $photo_preview = $('<div class="photo_preview"><img class="ajax-loader" src="/assets/ajax-loader.png" /></div>');
+			$('div#photos').append($photo_preview).masonry( 'appended', $photo_preview );
+		});
+		$('div#photos').masonry();
 	}).on('fileuploadprocessalways', function (e, data) {
 					var file, types;
 					types = /(\.|\/)(gif|jpe?g|png)$/i;
@@ -159,28 +164,31 @@ jQuery(function() {
 					} else {
 						return alert("" + file.name + " is not a gif, jpeg, or png image file");
 					};
-    }).on('fileuploadprogressall', function (e, data) {
+	}).on('fileuploadprogressall', function (e, data) {
 		$('#progress').fadeIn().css('display','inline-block');
-       var progress = parseInt(data.loaded / data.total * 100, 10);
-        console.log(data.loaded);
-        console.log(data.total);
-        $('#progress .bar').css(
-            'width',
-            progress + '%'
-        );
-        $('#progress .bar').html(progress + '%');
-    }).on('fileuploaddone', function (e) {
-    	// masonry reload
-    }).on('fileuploadstop', function (e) {
+		var progress = parseInt(data.loaded / data.total * 100, 10);
+		$('#progress .bar').css(
+			'width',
+			progress + '%'
+		);
+		$('#progress .bar').html(progress + '%');
+	}).on('fileuploaddone', function (e) {
+		$('.photo_preview').imagesLoaded(function(){
+			$('div#photos').masonry();
+		})
+	}).on('fileuploadstop', function (e) {
 		console.log('Upload finished.');
-        $('#progress').fadeOut();
-    }).on('fileuploadfail', function (e, data) {
-        $.each(data.files, function (index, file) {
-            var error = $('<span class="text-danger"/>').text('File upload failed.');
-            $(data.context.children()[index])
-                .append('<br>')
-                .append(error);
-        });
-    });
+		$('#progress').fadeOut();
+		$('.photo_preview').imagesLoaded(function(){
+			$('div#photos').masonry();
+		})
+	}).on('fileuploadfail', function (e, data) {
+		$.each(data.files, function (index, file) {
+			var error = $('<span class="text-danger"/>').text('File upload failed.');
+			$(data.context.children()[index])
+				.append('<br>')
+				.append(error);
+		});
+	});
 	$('#photo_image').attr('name', 'photo[image]');
 });
