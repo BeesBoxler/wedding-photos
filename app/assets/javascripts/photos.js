@@ -146,12 +146,11 @@ jQuery(function() {
         dataType: 'script',
         autoUpload: true,
     }).on('fileuploadadd', function (e, data) {
-				$('#progress').fadeIn().css('display','inline-block');
-        $('#progress .bar').css(
-            'width',
-            '0%'
-        );
-    }).on('fileuploadprocessalways', function (e, data) {
+        $.each(data.files, function () {
+        	$('#photos').append('<div class="photo_preview"><img class="ajax-loader" src="/assets/ajax-loader.png" /></div>');
+        });
+		// add item to masonry
+	}).on('fileuploadprocessalways', function (e, data) {
 					var file, types;
 					types = /(\.|\/)(gif|jpe?g|png)$/i;
 					file = data.files[0];
@@ -161,7 +160,8 @@ jQuery(function() {
 						return alert("" + file.name + " is not a gif, jpeg, or png image file");
 					};
     }).on('fileuploadprogressall', function (e, data) {
-        var progress = parseInt(data.loaded / data.total * 100, 10);
+		$('#progress').fadeIn().css('display','inline-block');
+       var progress = parseInt(data.loaded / data.total * 100, 10);
         console.log(data.loaded);
         console.log(data.total);
         $('#progress .bar').css(
@@ -169,8 +169,10 @@ jQuery(function() {
             progress + '%'
         );
         $('#progress .bar').html(progress + '%');
-    }).on('fileuploaddone', function (e, data) {
-				console.log('Upload finished.');
+    }).on('fileuploaddone', function (e) {
+    	// masonry reload
+    }).on('fileuploadstop', function (e) {
+		console.log('Upload finished.');
         $('#progress').fadeOut();
     }).on('fileuploadfail', function (e, data) {
         $.each(data.files, function (index, file) {
