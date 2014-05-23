@@ -33,6 +33,7 @@
 
   </section>
   <section id="albums">
+    <% if !@albums.empty? %>
     <%= will_paginate @albums, param_name: 'album_page' %>
 
     <% @albums.each do |a| %>
@@ -42,7 +43,8 @@
       </div>
     <% end %>
     <%= will_paginate @albums, param_name: 'album_page' %>
-
+    <% else %>
+    <p>Unfortunatley there are no albums yet.</p>
   </section>
 </div>
 <div id="link_share">
