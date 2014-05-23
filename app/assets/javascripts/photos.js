@@ -1,15 +1,44 @@
 jQuery(function() {
-	$('#content').masonry({
-		itemSelector: '.photo'
+	var $container = $('section#photos');
+	var $photo_type = '.single';
+	$('section#photos').masonry({
+		itemSelector: '.single',
+		isFitWidth: true,
+	});
+	$('section#albums').hide();
+	$('h1 a').click(function() {
+		$(this).addClass('active').siblings().removeClass('active');
+		if ($(this).attr("id") == "show_photos") {
+			$('section#albums').hide();
+			$('section#photos').show();
+			$('section#album').masonry('destroy');
+			$('section#photos').masonry({
+				itemSelector: '.single',
+				isFitWidth: true,
+			});
+			$container = $('section#photos');
+			$photo_type = '.single';
+		}
+		if ($(this).attr("id") == "show_albums") {
+			$('section#photos').hide();
+			$('section#albums').show();
+			$('section#photos').masonry('destroy');
+			$('section#albums').masonry({
+				itemSelector: '.album',
+				isFitWidth: true,
+			});
+			$container = $('section#albums');
+			$photo_type = '.album';
+		}
+		return false;
 	});
 	$(".fancybox").fancybox({
 		titleShow: true
 	});
-	var $container = $('#container');
 	$container.infinitescroll({
 		navSelector  : '.pagination',  // selector for the paged navigation 
 		nextSelector : '.next_page',  // selector for the NEXT link (to page 2)
-		itemSelector : '.photo',     // selector for all items you'll retrieve
+		itemSelector : $photo_type,     // selector for all items you'll retrieve
 		loading: {
 				finishedMsg: '<em>No more images to load.</em>',
 				msgText: "",

@@ -1,12 +1,9 @@
-<h1>All photos</h1>
+<h1><a href="#" id="show_photos" class="active">All photos</a> &bull; <a href="#" id="show_albums">All albums</a></h1>
 <div id="container">
-
   <section id="photos">
-
     <%= will_paginate @photos, param_name: 'photo_page' %>
-
     <% @photos.each do |photo| %>
-      <div class="photo">
+      <div class="photo single">
         <%= link_to image_tag( processed?(photo) ),
                     photo.image.url,
                     title: photo.title,
@@ -35,20 +32,20 @@
     <%= will_paginate @photos, param_name: 'photo_page' %>
 
   </section>
-
   <section id="albums">
-    <h1>Photo Albums</h1>
-    <div id="photos">
-      <% @albums.each do |a| %>
-        <div class="photo">
-          <span class="title"><%= a.name %></span>
-          <%= link_to image_tag( processed?(a.photo) ), album_path(a) %>
-        </div>
-      <% end %>
-    </div>
+    <%= will_paginate @albums, param_name: 'album_page' %>
+
+    <% @albums.each do |a| %>
+      <div class="photo album">
+        <span class="title"><%= a.name %></span>
+        <%= link_to image_tag( processed?(a.photo) ), album_path(a) %>
+      </div>
+    <% end %>
+    <%= will_paginate @albums, param_name: 'album_page' %>
+
   </section>
 </div>
 <div id="link_share">
-  <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value=""></input>
+  <input name="clipboard-text" id="clipboard-text" class="link_share" type="text" value="">
   <button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button>
 </div>
