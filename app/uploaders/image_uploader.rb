@@ -37,10 +37,12 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
+    process :rotate
     process resize_to_fill: [250, 250]
   end
   
   version :large do
+    process :rotate
     process resize_to_fit: [1080, 1080]
   end
 
@@ -63,4 +65,9 @@ class ImageUploader < CarrierWave::Uploader::Base
       model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
     end
 
+    def rotate
+      manipulate! do |img|
+      img = img.auto_orient
+    end
+end
 end
