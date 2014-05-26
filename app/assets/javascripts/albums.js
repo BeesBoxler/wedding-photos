@@ -1,8 +1,4 @@
 jQuery(function() {
-	$('#photos').masonry({
-		itemSelector: '.photo',
-		gutter: 10
-	});
 	$(".fancybox").fancybox({
 		titleShow: true
 	});

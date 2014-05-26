@@ -9,9 +9,4 @@
 //	});
 
 $( document ).ready(function() {
-  $('#container').imagesLoaded().done( function( instance ) {
-    $('#container').masonry({
-      itemSelector: '.photo'
-    });
-  });
 });

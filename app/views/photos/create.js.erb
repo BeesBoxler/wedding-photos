@@ -3,7 +3,9 @@
 <% else %>
 	$('div.photo_preview').each(function (i,n){
 		if(!$(n).attr('id')){
-			$(this).attr('id', 'photo_preview_<%= @photo.id %>').html("<%= j render(@photo) %>");
+			$(this).children('.uploadedImage').css('opacity', '1');
+			$(this).children('div.ajax-loader').remove();
+			$(this).attr('id', 'photo_preview_<%= @photo.id %>').append("<%= j render(@photo) %>");
 			return false;
 		}
 	});
