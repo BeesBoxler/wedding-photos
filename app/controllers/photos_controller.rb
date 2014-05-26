@@ -20,6 +20,7 @@ class PhotosController < ApplicationController
   def create
     @user = current_user
     @photo = @user.photos.create(params[:photo])
+ 
   end
 
   def update

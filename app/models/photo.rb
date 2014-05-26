@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :image, :title, :description
+  attr_accessible :image, :title, :description, :original_filename
   belongs_to :user
   has_many :album_photos
   has_many :albums, through: :album_photos
@@ -7,6 +7,10 @@ class Photo < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader, mount_on: :image_file_name
   process_in_background :image
+
+  def original_filename=(filetitle)
+    self.title = filetitle
+  end
 
   # has_attached_file :image, url: "/assets/:user_id/:photo_id_:user_id_:style.:extension", styles: {
   #   small: '400x400>',
@@ -19,3 +23,5 @@ class Photo < ActiveRecord::Base
   # validates_attachment_presence
 
 end
+
+

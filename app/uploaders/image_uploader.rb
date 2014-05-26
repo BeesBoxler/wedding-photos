@@ -37,6 +37,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   process :auto_orient
 
+  process :get_original_date
+
   # Create different versions of your uploaded files:
   version :thumb do
     process resize_to_fill: [250, 250]
@@ -70,4 +72,10 @@ class ImageUploader < CarrierWave::Uploader::Base
         image.tap(&:auto_orient)
       end
     end
+
+    def get_original_date
+      exif = EXIFR::JPEG.new(photo.queued_for_write[:original]).date_time
+      self.date_taken = exif
+    end
+
 end
