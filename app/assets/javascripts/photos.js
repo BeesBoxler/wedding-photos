@@ -148,7 +148,7 @@ jQuery(function() {
 	});
 
 	// The number of errors
-	var errMessage = 0;
+/*	var errMessage = 0;
 	
 	// Get all of the data URIs and put them in an array
 	var dataArray = [];
@@ -191,7 +191,9 @@ jQuery(function() {
 						
 			// Start a new instance of FileReader
 			var fileReader = new FileReader();
-				
+			
+			console.log("File Reader: " + fileReader);
+
 				// When the filereader loads initiate a function
 				fileReader.onload = (function(file) {
 					
@@ -203,6 +205,7 @@ jQuery(function() {
 						// Move each image 40 more pixels across
 						var image = this.result;
 						
+						console.log("Data Array: " + dataArray);
 						
 						// Just some grammatical adjustments
 						if(dataArray.length == 1) {
@@ -246,8 +249,11 @@ jQuery(function() {
 		var x = 0;
 		var y = 0;
 		
-		
-		$.each(dataArray, function(index, file) {	
+		console.log("Total Percent: " + totalPercent);
+
+		$.each(dataArray, function(index, file) {
+
+			console.log("Starting Each");
 			
 			$.post('/photos', dataArray[index], function(data) {
 			
@@ -318,13 +324,14 @@ jQuery(function() {
 		}
 	} else {
 		$('#info').hide();
-	}
+	}*/
 
 
 
-	/*$('#new_photo').fileupload({
+	$('#new_photo').fileupload({
 		dataType: 'script',
 		autoUpload: true,
+		sequentialUploads: false,
 	}).on('fileuploadadd', function (e, data) {
 		$.each(data.files, function () {
 			var $photo_preview = $('<div class="photo_preview"><img class="ajax-loader" src="/assets/ajax-loader.png" /></div>');
@@ -366,5 +373,5 @@ jQuery(function() {
 				.append(error);
 		});
 	});
-	$('#photo_image').attr('name', 'photo[image]');*/
+	$('#photo_image').attr('name', 'photo[image]');
 });
