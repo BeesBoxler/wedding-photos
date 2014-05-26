@@ -73,9 +73,6 @@ class ImageUploader < CarrierWave::Uploader::Base
       end
     end
 
-    def get_original_date
-      exif = EXIFR::JPEG.new(photo.queued_for_write[:original]).date_time
-      self.date_taken = exif
-    end
+
 
 end

@@ -8,6 +8,8 @@ class Photo < ActiveRecord::Base
   mount_uploader :image, ImageUploader, mount_on: :image_file_name
   process_in_background :image
 
+  # before_save :get_original_date
+
   def original_filename=(filetitle)
     self.title = filetitle
   end
@@ -21,6 +23,11 @@ class Photo < ActiveRecord::Base
 
   # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   # validates_attachment_presence
+
+  # def get_original_date
+  #   exif = EXIFR::JPEG.new(photo).date_time
+  #   self.date_taken = exif
+  # end
 
 end
 
