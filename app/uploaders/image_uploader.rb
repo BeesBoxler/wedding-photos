@@ -37,7 +37,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   process :auto_orient
 
-  process :get_original_date
+  # process :get_original_date
 
   # Create different versions of your uploaded files:
   version :thumb do
