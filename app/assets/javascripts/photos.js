@@ -146,7 +146,183 @@ jQuery(function() {
 		itemSelector: '.photo_preview',
 		isFitWidth: true,
 	});
-	$('#new_photo').fileupload({
+
+	// The number of errors
+	var errMessage = 0;
+	
+	// Get all of the data URIs and put them in an array
+	var dataArray = [];
+	
+	// Bind the drop event to the dropzone.
+	$('#photo_image').bind('change', function(e) {
+
+		console.log("Files added");
+			
+		// This variable represents the files that have been dragged
+		// into the drop area
+		var files = e.target.files;
+
+		console.log("Files variable: " + files)
+		
+		// For each file
+		$.each(files, function(index, file) {
+						
+			// Some error messaging
+			if (!files[index].type.match('image.*')) {
+				
+				if(errMessage == 0) {
+					$('#drop-files').append('Hey! Images only');
+					++errMessage
+				}
+				else if(errMessage == 1) {
+					$('#drop-files').append('Stop it! Images only!');
+					++errMessage
+				}
+				else if(errMessage == 2) {
+					$('#drop-files').append("Can't you read?! Images only!");
+					++errMessage
+				}
+				else if(errMessage == 3) {
+					$('#drop-files').append("Fine! Keep adding non-images.");
+					errMessage = 0;
+				}
+				return false;
+			}
+						
+			// Start a new instance of FileReader
+			var fileReader = new FileReader();
+				
+				// When the filereader loads initiate a function
+				fileReader.onload = (function(file) {
+					
+					return function(e) { 
+						
+						// Push the data URI into an array
+						dataArray.push({name : file.name, value : this.result});
+						
+						// Move each image 40 more pixels across
+						var image = this.result;
+						
+						
+						// Just some grammatical adjustments
+						if(dataArray.length == 1) {
+							$('#upload-button span').html("1 file to be uploaded");
+						} else {
+							$('#upload-button span').html(dataArray.length+" files to be uploaded");
+						}
+						$('#dropped-files').append('<div class="image" style="display:inline-block; background: url('+image+'); background-size: cover;"> </div>'); 
+					}; 
+					
+				})(files[index]);
+				
+			// For data URI purposes
+			fileReader.readAsDataURL(file);
+	
+		});
+
+		function restartFiles() {
+		
+			// This is to set the loading bar back to its default state
+			$('#loading-bar .loading-color').css({'width' : '0%'});
+			$('#loading').css({'display' : 'none'});
+			$('#info').html(' ');
+			// --------------------------------------------------------
+			
+			// We need to remove all the images
+			// We'll also make the upload button disappear
+			
+			$('#new_photo').get(0).reset();
+		
+			// And finally, empty the array
+			dataArray.length = 0;
+			
+			return false;
+		}
+
+		//$('#new_photo').submit();
+
+		$("#progress").show();
+		var totalPercent = 100 / dataArray.length;
+		var x = 0;
+		var y = 0;
+		
+		
+		$.each(dataArray, function(index, file) {	
+			
+			$.post('/photos', dataArray[index], function(data) {
+			
+				var fileName = dataArray[index].name;
+				++x;
+
+				$('#info').html('Uploading '+fileName);
+
+				console.log("Uploading " + fileName);
+				console.log("Uploaded " + totalPercent);
+				
+				// Change the bar to represent how much has loaded
+				$('#progress .bar').css({'width' : totalPercent*(x)+'%'});
+				
+				if(totalPercent*(x) == 100) {
+					// Show the upload is complete
+					$('#info').html('Uploading Complete!');
+					
+					// Reset everything when the loading is completed
+					setTimeout(restartFiles, 500);
+					
+				} else if(totalPercent*(x) < 100) {
+					console.log("Uploaded " + totalPercent);
+				
+					$('#progress .bar').css({'width' : totalPercent*(x)+'%'});
+
+					// Show that the files are uploading
+					$('#info').html('Uploading '+fileName);
+				
+				}
+				
+				// Show a message showing the file URL.
+				var dataSplit = data.split(':');
+				if(dataSplit[1] == 'uploaded successfully') {
+					var realData = '<li><a href="images/'+dataSplit[0]+'">'+fileName+'</a> '+dataSplit[1]+'</li>';
+					
+					$('#info').append('<li><a href="images/'+dataSplit[0]+'">'+fileName+'</a> '+dataSplit[1]+'</li>');
+				
+					// Add things to local storage 
+					if(window.localStorage.length == 0) {
+						y = 0;
+					} else {
+						y = window.localStorage.length;
+					}
+					
+					window.localStorage.setItem(y, realData);
+				
+				} else {
+					$('#info').append('<li><a href="images/'+data+'. File Name: '+dataArray[index].name+'</li>');
+				}
+				
+			});
+		});
+		
+		return false;
+	});
+		
+	// Append the localstorage to the uploaded files section
+	if(window.localStorage.length > 0) {
+		$('#info').show();
+		for (var t = 0; t < window.localStorage.length; t++) {
+			var key = window.localStorage.key(t);
+			var value = window.localStorage[key];
+			// Append the list items
+			if(value != undefined || value != '') {
+				$('#info').append(value);
+			}
+		}
+	} else {
+		$('#info').hide();
+	}
+
+
+
+	/*$('#new_photo').fileupload({
 		dataType: 'script',
 		autoUpload: true,
 	}).on('fileuploadadd', function (e, data) {
@@ -190,5 +366,5 @@ jQuery(function() {
 				.append(error);
 		});
 	});
-	$('#photo_image').attr('name', 'photo[image]');
+	$('#photo_image').attr('name', 'photo[image]');*/
 });
