@@ -33,4 +33,21 @@
 			</div>
 		<% end %>
 	</div>
+	<a href="#" class="OpenModal" data-modal="modal_edit"></a>
+	<div id="modal_edit">
+		<%= form_for @album do |f| %>
+			<%= f.label :name %>
+			<%= f.text_field :name, value: @album.name %>
+			<%= f.submit %>
+			<span>Select some photos to add to your album</span>
+			<div id="photos">
+				<% @photos.each do |p| %>
+					<div class="photo">
+						<%= check_box_tag "album[photo_ids][]", p.id, @album.photo_ids.include?(p.id), id: dom_id(p), class: 'checkbox' %>
+						<%= label_tag dom_id(p), (image_tag processed?(p, :thumb), class: 'checkbox-photo') %>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
 </div>

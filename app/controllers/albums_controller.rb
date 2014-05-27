@@ -5,6 +5,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @photos = Photo.all
   end
 
   def new
@@ -29,6 +30,9 @@ class AlbumsController < ApplicationController
   end
 
   def update
+    @album = Album.find(params[:id])
+    @album.update_attributes(params[:album])
+    redirect_to @album
   end
 
   def remove_photo
