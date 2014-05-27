@@ -3,10 +3,14 @@ require 'resque/server'
 
 Grit::Application.routes.draw do
 
-  mount Resque::Server.new, at: "/resque"
+  if Rails.env.development?
+
+    mount Resque::Server.new, at: "/resque"
+
+  end
 
   match "albums/remove_photo", to: 'albums#remove_photo'
-  resources :albums
+  resources :albums, only: [ :new, :show, :index, :update, :create ]
   
 
   root to: 'static_pages#landing'
