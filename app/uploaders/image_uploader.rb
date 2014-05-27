@@ -40,6 +40,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   # process :get_original_date
 
   # Create different versions of your uploaded files:
+
+  version :tiny do 
+    process resize_to_fill: [120, 120]
+  end
+  
   version :thumb do
     process resize_to_fill: [250, 250]
   end
