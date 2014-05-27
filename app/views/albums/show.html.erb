@@ -44,7 +44,7 @@
 				<% @photos.each do |p| %>
 					<div class="photo">
 						<%= check_box_tag "album[photo_ids][]", p.id, @album.photo_ids.include?(p.id), id: dom_id(p), class: 'checkbox' %>
-						<%= label_tag dom_id(p), (image_tag processed?(p, :tiny), class: 'checkbox-photo') %>
+						<%= label_tag dom_id(p), (image_tag processed?(p, :teeny), class: 'checkbox-photo') %>
 					</div>
 				<% end %>
 			</div>
