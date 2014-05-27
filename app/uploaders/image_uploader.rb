@@ -29,6 +29,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
 
   end
+  
   process :auto_orient
 
   version :teeny do 
