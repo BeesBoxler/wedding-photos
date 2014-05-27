@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  before_filter :signed_in_user, only: [ :new, :create, :update, :remove_photo, :destroy ]
+  before_filter :correct_user, only: [ :update, :remove_photo, :destroy ]
   def index
     @albums = Album.all
   end
@@ -26,9 +28,6 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     @album = Album.find(params[:id])
     @album.update_attributes(params[:album])
@@ -39,7 +38,7 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @photo = Photo.find(params[:photo_id])
     @album.photos.destroy(@photo)
-
+    flash[:success] = "Your photo was successfully removed from this album."
     redirect_to @album
   end
 
