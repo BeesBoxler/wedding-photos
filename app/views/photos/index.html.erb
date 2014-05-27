@@ -1,4 +1,4 @@
-<h1><a href="#" id="show_photos" class="active">All photos</a> &bull; <a href="#" id="show_albums">All albums</a></h1>
+<h1 id="view_switch"><a href="#" id="show_photos" class="active">All photos</a> &bull; <a href="#" id="show_albums">All albums</a></h1>
 <div id="container">
   <section id="photos">
     <%= will_paginate @photos, param_name: 'photo_page' %>
@@ -44,7 +44,7 @@
     <% end %>
     <%= will_paginate @albums, param_name: 'album_page' %>
     <% else %>
-    <p>Unfortunatley there are no albums yet.</p>
+    <p>Unfortunately there are no albums yet.</p>
     <% end %>
   </section>
 </div>

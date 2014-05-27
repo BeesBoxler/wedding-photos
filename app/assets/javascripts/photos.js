@@ -17,7 +17,7 @@ jQuery(function() {
 		isFitWidth: true,
 	});*/
 	$('section#albums').hide();
-	$('h1 a').click(function() {
+	$('#view_switch a').click(function() {
 		$(this).addClass('active').siblings().removeClass('active');
 		if ($(this).attr("id") == "show_photos") {
 			$('section#albums').hide();
