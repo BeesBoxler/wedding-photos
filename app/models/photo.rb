@@ -2,8 +2,8 @@ class Photo < ActiveRecord::Base
   attr_accessible :image, :title, :description, :original_filename
   belongs_to :user
   has_many :album_photos
-  has_many :albums, through: :album_photos
-  has_many :albums, foreign_key: 'cover_photo'
+  has_many :albums, through: :album_photos, dependent: :destroy
+  has_many :albums, foreign_key: 'cover_photo', dependent: :nullify
 
   mount_uploader :image, ImageUploader, mount_on: :image_file_name
   process_in_background :image
