@@ -36,33 +36,33 @@ div.photo:hover{
 }
 
 div.photo span{
-    position: absolute;
-    bottom: -25px;
-    left: 4px;
-    width: 234px;
-    text-align: center;
-    color: #333;
-    padding: 5px 8px;
-    font-size: 14px;
-    font-weight: 700;
+	position: absolute;
+	bottom: -25px;
+	left: 4px;
+	width: 234px;
+	text-align: center;
+	color: #333;
+	padding: 5px 8px;
+	font-size: 14px;
+	font-weight: 700;
 }
 
 div.photo p{
-    display: none;
-    position: absolute;
-    top: 20px;
-    text-align: center;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    padding: 5px 8px;
-    font-size: 14px;
-    font-weight: 700;
+	display: none;
+	position: absolute;
+	top: 20px;
+	text-align: center;
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+	padding: 5px 8px;
+	font-size: 14px;
+	font-weight: 700;
 }
 
 div.photo p.desc{
 	top: 47px;
-    font-size: 12px;
-    font-weight: 300;
+	font-size: 12px;
+	font-weight: 300;
 }
 
 div.photo:hover label{
@@ -89,7 +89,159 @@ input[type=checkbox]:checked + label{
 
 div.photo a.delete{
 	display: none;
-    position: absolute;
+	position: absolute;
 	bottom: 16px;
 	right: 14px;
+}
+
+input[type=checkbox]:disabled + label{
+	opacity: 0.5;
+}
+
+input.fuButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+a.edit {
+	margin: 0 0 -22px;
+	vertical-align: middle;
+}
+
+div.saveFile{
+	display: none;    
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: $blue;
+	background-image: linear-gradient(top, $blue, $blue_hover);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$blue', EndColorStr='$blue_hover');
+	border: 1px solid #777;
+	width: 30px;
+	height: 30px;
+	font: bold 1em/2em Arial, Helvetica;
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: .2em;
+	box-shadow: 0 0 1px 1px $blue_light inset, 0 1px 0 rgba(0,0,0,.3);
+	z-index: 100;
+	padding: 0;
+	vertical-align: middle;
+	margin: 0px 0px -22px -4px;
+}
+
+div.saveFile:hover {
+	background-color: $blue_light;        
+	background-image: linear-gradient(top, #fafafa, #ddd);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');        
+}
+
+div.saveFile:active {
+	box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+}
+
+div.saveFile:focus {
+	outline: 0;
+	background: $blue_hover;
+}
+
+a.addFile{
+	display: none;    
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: $green;
+	background-image: linear-gradient(top, $green, $green_hover);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$green', EndColorStr='$green_hover');
+	border: 1px solid #777;
+	width: 30px;
+	height: 30px;
+	font: bold 1em/2em Arial, Helvetica;
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: .2em;
+	box-shadow: 0 0 1px 1px $green_light inset, 0 1px 0 rgba(0,0,0,.3);
+	z-index: 100;
+	padding: 0;
+	margin: 0px 0px -22px;
+	vertical-align: middle;
+}
+
+a.addFile:hover {
+	background-color: $green_light;        
+	background-image: linear-gradient(top, #fafafa, #ddd);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');        
+}
+
+a.addFile:active {
+	box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+}
+
+a.addFile:focus {
+	outline: 0;
+	background: $green_hover;
+}
+
+.not_editing {
+	border: 0;
+	background: transparent;
+	color: #000;
+	font-family: 'Lobster', cursive;
+	text-align: left;
+	display: inline-block;
+	font-size: 2em;
+	padding: 1px 1px 1px 11px;
+	margin: 0 0 0 16px;
+	position: relative;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.editing {
+	border: 1px solid #333;
+	border-radius: 3px;
+	background: #fff;
+	color: #000;
+	font-family: 'Lobster', cursive;
+	text-align: left;
+	display: inline-block;
+	font-size: 2em;
+	padding: 0 0 0 10px;
+	margin: 0 0 0 16px;
+	position: relative;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+#edit_album_1 {
+	max-width: 100%;
+	display: inline-block;
+}
+
+#edit_album_1 h2 {
+	padding: 11px;
+	vertical-align: top;
+	display: inline-block;
+}
+
+#album_name {
+	max-width: 75%;
+	display: inline-block;
+	vertical-align: top;
+	-webkit-transition: width 300ms;
+	-moz-transition: width 300ms;
+	-ms-transition: width 300ms;
+	-o-transition: width 300ms;
+	transition: width 300ms;
+}
+
+#album_edit {
+	display: none;
 }

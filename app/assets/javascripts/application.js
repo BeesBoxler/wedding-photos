@@ -21,3 +21,4 @@
 //= require global
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jquery.autosize.input

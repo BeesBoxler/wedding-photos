@@ -1,7 +1,19 @@
 <% content_for :title, @album.name.html_safe %>
 
-<h1><%= @album.name %></h1>
-<h2>Created by <%= @album.user.name %></h2>
+<%= form_for @album do |f| %>
+	<%= f.text_field :name, value: @album.name, class: "not_editing", disabled: true, size: nil %>
+	<h2>Created by <%= @album.user.name %></h2>
+	<div class="saveFile">
+		<span><i class="fa fa-floppy-o"></i></span>
+		<%= f.submit class: "fuButton" %>
+	</div>
+	<a href="#" class="addFile" title="Add photos to album"><i class="fa fa-plus"></i></a>
+<% end %>
+<% if current_user?(@album.user) %>
+<a href="#" class="edit">
+	<i class="fa fa-pencil"></i>
+</a>
+<% end %>
 <div class="content">
 	<div id="photos">
 		<% @album.photos.each do |p| %>
@@ -11,7 +23,6 @@
                   title: p.title,
                   rel: "wedding",
                   class: "fancybox"  %>
-				<% if current_user?(@album.user) %>
 				<%= link_to raw('<i class="fa fa-trash-o"></i>'),
 					{ 
 						id: @album.id, 
@@ -23,7 +34,6 @@
 					method: :delete, 
 					data: { confirm: 'Are you sure?' },
 					class: "delete" %>
-				<% end %>
 				<% if !p.title.nil? && !p.title.empty? %>
 				<p class="title"><%= p.title %></p>
 				<% end %>
@@ -33,19 +43,18 @@
 			</div>
 		<% end %>
 	</div>
-	<a href="#" class="OpenModal" data-modal="modal_edit"></a>
-	<div id="modal_edit">
+	<div id="album_edit">
 		<%= form_for @album do |f| %>
-			<%= f.label :name %>
-			<%= f.text_field :name, value: @album.name %>
 			<%= f.submit %>
 			<span>Select some photos to add to your album</span>
 			<div id="photos">
 				<% @photos.each do |p| %>
+				<% if !@album.photo_ids.include?(p.id) %>
 					<div class="photo">
 						<%= check_box_tag "album[photo_ids][]", p.id, @album.photo_ids.include?(p.id), id: dom_id(p), class: 'checkbox' %>
 						<%= label_tag dom_id(p), (image_tag processed?(p, :teeny), class: 'checkbox-photo') %>
 					</div>
+				<% end %>
 				<% end %>
 			</div>
 		<% end %>
