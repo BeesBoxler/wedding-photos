@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
   before_filter :correct_user, only: [ :update, :remove_photo, :destroy ]
   def index
     @albums = Album.all
+    flash[:success] = "Your album was successfully deleted."
   end
 
   def show
@@ -45,5 +46,6 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
+    redirect_to albums_path
   end
 end

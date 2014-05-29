@@ -21,7 +21,13 @@ jQuery(function() {
 		$('#album_name').removeClass('editing').addClass('not_editing').prop('disabled', true);
 	});
 	$('.addFile').click(function(){
-		console.log("Open windows to add files");
+		$( "#album_edit" ).dialog({
+			modal: true,
+			draggable: false,
+			resizable: false,
+			width: 'auto',
+			maxHeight: 600
+		});
 		return false;
 	});
 	$('#album_name').autosizeInput();

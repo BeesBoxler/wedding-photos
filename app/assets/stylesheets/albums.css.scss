@@ -87,15 +87,15 @@ input[type=checkbox]:checked + label{
 	background: $blue;
 }
 
+input[type=checkbox]:disabled + label{
+	opacity: 0.5;
+}
+
 div.photo a.delete{
 	display: none;
 	position: absolute;
 	bottom: 16px;
 	right: 14px;
-}
-
-input[type=checkbox]:disabled + label{
-	opacity: 0.5;
 }
 
 input.fuButton {
@@ -220,12 +220,12 @@ a.addFile:focus {
 	text-shadow: 1px 1px 1px #fff;
 }
 
-#edit_album_1 {
+.edit_album {
 	max-width: 100%;
 	display: inline-block;
 }
 
-#edit_album_1 h2 {
+.edit_album h2 {
 	padding: 11px;
 	vertical-align: top;
 	display: inline-block;
@@ -244,4 +244,41 @@ a.addFile:focus {
 
 #album_edit {
 	display: none;
+	max-width: 823px;
+}
+
+#album_edit .edit_album {
+	margin-top: 30px;
+}
+
+#album_edit_top {
+	position: fixed;
+	z-index: 100;
+	width: 820px;
+	padding: 0px 0px 15px;
+	margin-top: -40px;
+	background: #fff;
+}
+
+#album_edit_top h3 {
+	display: inline-block;
+	width: 648px;
+	margin: 0px;
+	padding-left: 2px;
+}
+
+#album_edit_top .update_album {
+	display: inline-block;
+	width: 150px;
+	margin: 0px;
+	padding: 10px 0px;
+	border-radius: 5px;
+}
+
+#delete_album {
+	display: none;
+	width: auto;
+	padding: 0 10px;
+	margin: 0 0 -22px;
+	vertical-align: middle;
 }

@@ -10,7 +10,7 @@ Grit::Application.routes.draw do
   end
 
   match "albums/remove_photo", to: 'albums#remove_photo'
-  resources :albums, only: [ :new, :show, :index, :update, :create ]
+  resources :albums, only: [ :new, :show, :index, :update, :create, :destroy ]
   
 
   root to: 'static_pages#landing'
