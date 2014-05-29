@@ -30,5 +30,6 @@ jQuery(function() {
 		});
 		return false;
 	});
+	$('.existing_photo').parent('.photo').addClass('existing_photo').children().addClass('existing_photo').children().addClass('existing_photo');;
 	$('#album_name').autosizeInput();
 });
