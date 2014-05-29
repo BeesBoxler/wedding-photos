@@ -11,10 +11,11 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @photos = @album.photos
     respond_to do |format|
       format.html
       format.json { render json:  { album: @album,
-                                    photos: @album.photos }}
+                                    photos: @photos }}
     end
   end
 
@@ -48,6 +49,7 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @photo = Photo.find(params[:photo_id])
     @album.photos.destroy(@photo)
+    @album.save
     flash[:success] = "Your photo was successfully removed from this album."
     redirect_to @album
   end

@@ -15,6 +15,7 @@
 </a>
 <% end %>
 <div class="content">
+	<% if @album.photos %>
 	<div id="photos">
 		<% @album.photos.each do |p| %>
 			<div class="photo">
@@ -23,20 +24,17 @@
                   title: p.title,
                   rel: "wedding",
                   class: "fancybox"  %>
-        <% if deletable? @album %>
-					<%= link_to raw('<i class="fa fa-trash-o"></i>'),
-										{ 
-											id: @album.id, 
-											controller: "albums", 
-											action: "remove_photo", 
-											photo_id: p.id 
-										},
-										title: "Delete Photo",
-										remote: true,
-										method: :delete, 
-										data: { confirm: 'Are you sure?' },
-										class: "delete" %>
-				<% end %> 
+				<%= link_to raw('<i class="fa fa-trash-o"></i>'),
+									{ 
+										id: @album.id, 
+										controller: "albums", 
+										action: "remove_photo", 
+										photo_id: p.id 
+									},
+									title: "Delete Photo",
+									remote: true,
+									data: { confirm: 'Are you sure?' },
+									class: "delete" %>
 				<% if !p.title.nil? && !p.title.empty? %>
 				<p class="title"><%= p.title %></p>
 				<% end %>
@@ -46,6 +44,9 @@
 			</div>
 		<% end %>
 	</div>
+	<% else %>
+	<p>Sorry, this album is empty. Why not add some photos to it?</p>
+	<% end %>
 	<div id="album_edit">
 		<%= form_for @album do |f| %>
 			<%= f.submit %>

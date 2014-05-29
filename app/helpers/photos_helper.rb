@@ -7,5 +7,8 @@ module PhotosHelper
       image.image.url(size)
     end
   end
+
+  def cover_photo?(photo)
+  end
   
 end

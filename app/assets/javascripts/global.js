@@ -10,3 +10,9 @@
 
 $( document ).ready(function() {
 });
+
+$(document).on('ajax:success', '.delete', function() {
+    // .parent() is the div containing this "X" delete link
+    $(this).parent().fadeOut();
+    }
+);

@@ -37,7 +37,14 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
+
+    @albums = @photo.albums
+    @albums.try(:each) do |a|
+      a.save
+    end
+
     @photo.destroy
+
     flash[:success] = "Your photo was successfully deleted."
     redirect_to photos_path
   end

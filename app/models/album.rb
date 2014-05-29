@@ -15,6 +15,8 @@ class Album < ActiveRecord::Base
   private 
 
   def set_cover_photo
-    self.photo = self.photos.first
+    if self.photos.first
+      self.photo = self.photos.first
+    end
   end
 end

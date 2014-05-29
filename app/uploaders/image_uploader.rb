@@ -30,6 +30,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   end
 
+  def extension_white_list
+    %w(png jpeg jpg JPEG JPG PNG gif GIF)
+  end
+
   process :auto_orient
 
   version :teeny do 

@@ -18,6 +18,7 @@
                       photo,
                       title: "Delete Photo",
                       method: :delete, 
+                      remote: true,
                       data: { confirm: 'Are you sure?' },
                       class: "delete" %>
         <% end %>
@@ -39,7 +40,11 @@
     <% @albums.each do |a| %>
       <div class="photo album">
         <span class="title"><%= a.name %></span>
-        <%= link_to image_tag( processed?(a.photo, :thumb) ), album_path(a) %>
+        <% if a.photo %>
+          <%= link_to image_tag( processed?(a.photo, :thumb) ), album_path(a) %>
+        <% else %>
+          <%= link_to "missing album cover img", album_path(a) %>
+        <% end %>
       </div>
     <% end %>
     <%= will_paginate @albums, param_name: 'album_page' %>
