@@ -29,7 +29,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
 
   end
-  
+
   process :auto_orient
 
   version :teeny do 
@@ -51,6 +51,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   def filename
     "#{secure_token(10)}_#{model.user.name.downcase.split.join}.#{file.extension}" if original_filename
   end
+
+
 
   protected
 

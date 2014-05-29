@@ -3,11 +3,19 @@ class AlbumsController < ApplicationController
   before_filter :correct_user, only: [ :update, :remove_photo, :destroy ]
   def index
     @albums = Album.all
+    respond_to do |format| 
+      format.html { redirect_to photos_path }
+      format.json { render json: { album: @albums }}
+    end
   end
 
   def show
     @album = Album.find(params[:id])
-    @photos = Photo.all
+    respond_to do |format|
+      format.html
+      format.json { render json:  { album: @album,
+                                    photos: @album.photos }}
+    end
   end
 
   def new
@@ -17,14 +25,16 @@ class AlbumsController < ApplicationController
 
   def create
     @user = current_user
+    @photos = Photo.all
     @album = @user.albums.create(params[:album])
+
     if @album.save
       redirect_to @album
     else
       @album.errors.full_messages.each do |e|
         flash[:error] = e
       end
-      redirect_to new_album_path
+      render action: 'new'
     end
   end
 

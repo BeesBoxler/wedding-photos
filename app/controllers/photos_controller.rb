@@ -3,10 +3,18 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.paginate(page: params[:photo_page], per_page: 20)
     @albums = Album.paginate(page: params[:album_page], per_page: 20)
+    respond_to do |format|
+      format.html
+      format.json { render json: @photos }
+    end
   end
 
   def show
     @photo = Photo.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: @photo }
+    end
   end
 
   def new

@@ -23,17 +23,20 @@
                   title: p.title,
                   rel: "wedding",
                   class: "fancybox"  %>
-				<%= link_to raw('<i class="fa fa-trash-o"></i>'),
-					{ 
-						id: @album.id, 
-						controller: "albums", 
-						action: "remove_photo", 
-						photo_id: p.id 
-					},
-					title: "Delete Photo",
-					method: :delete, 
-					data: { confirm: 'Are you sure?' },
-					class: "delete" %>
+        <% if deletable? @album %>
+					<%= link_to raw('<i class="fa fa-trash-o"></i>'),
+										{ 
+											id: @album.id, 
+											controller: "albums", 
+											action: "remove_photo", 
+											photo_id: p.id 
+										},
+										title: "Delete Photo",
+										remote: true,
+										method: :delete, 
+										data: { confirm: 'Are you sure?' },
+										class: "delete" %>
+				<% end %> 
 				<% if !p.title.nil? && !p.title.empty? %>
 				<p class="title"><%= p.title %></p>
 				<% end %>

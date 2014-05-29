@@ -9,7 +9,7 @@ Grit::Application.routes.draw do
 
   end
 
-  match "albums/remove_photo", to: 'albums#remove_photo'
+  match "albums/remove_photo/", to: 'albums#remove_photo'
   resources :albums, only: [ :new, :show, :index, :update, :create ]
   
 
