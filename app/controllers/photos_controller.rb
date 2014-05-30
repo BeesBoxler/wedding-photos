@@ -40,7 +40,8 @@ class PhotosController < ApplicationController
 
     @albums = @photo.albums
     @albums.try(:each) do |a|
-      a.save
+      a.touch(:updated_at)
+      a.save!
     end
 
     @photo.destroy

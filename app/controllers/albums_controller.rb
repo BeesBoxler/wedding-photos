@@ -13,6 +13,7 @@ class AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])
     @photos = @album.photos
+    @all_photos = Photo.all
     respond_to do |format|
       format.html
       format.json { render json:  { album: @album,
