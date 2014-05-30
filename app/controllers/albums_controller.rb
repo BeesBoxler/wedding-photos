@@ -7,6 +7,7 @@ class AlbumsController < ApplicationController
       format.html { redirect_to photos_path }
       format.json { render json: { albums: @albums }}
     end
+  end
 
 
   def show
