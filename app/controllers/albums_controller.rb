@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
     @albums = Album.all
     respond_to do |format| 
       format.html { redirect_to photos_path }
-      format.json { render json: { album: @albums }}
+      format.json { render json: { albums: @albums }}
     end
   end
 
