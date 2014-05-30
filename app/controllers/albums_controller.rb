@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
       format.html { redirect_to photos_path }
       format.json { render json: { albums: @albums }}
     end
-  end
+
 
   def show
     @album = Album.find(params[:id])
@@ -57,5 +57,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
+    redirect_to albums_path
+    flash[:success] = "Your album was successfully deleted."
   end
 end

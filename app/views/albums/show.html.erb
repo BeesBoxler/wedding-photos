@@ -10,9 +10,9 @@
 	<a href="#" class="addFile" title="Add photos to album"><i class="fa fa-plus"></i></a>
 <% end %>
 <% if current_user?(@album.user) %>
-<a href="#" class="edit">
-	<i class="fa fa-pencil"></i>
-</a>
+<%= link_to raw('<i class="fa fa-pencil"></i>'), '#', class: 'edit' %>
+<%= link_to raw('<i class="fa fa-trash-o"></i> Delete Album'), @album, method: :delete, class: 'delete', id: 'delete_album' %>
+
 <% end %>
 <div class="content">
 	<% if @album.photos %>
@@ -49,16 +49,20 @@
 	<% end %>
 	<div id="album_edit">
 		<%= form_for @album do |f| %>
-			<%= f.submit %>
-			<span>Select some photos to add to your album</span>
+		<div id="album_edit_top">
+			<h3>Select some photos to add to your album</h3>
+			<%= f.submit class: "update_album button" %>
+		</div>
 			<div id="photos">
 				<% @photos.each do |p| %>
-				<% if !@album.photo_ids.include?(p.id) %>
 					<div class="photo">
+						<% if @album.photo_ids.include?(p.id) %>
+						<%= check_box_tag "album[photo_ids][]", p.id, @album.photo_ids.include?(p.id), id: dom_id(p), class: 'checkbox existing_photo' %>
+						<% else %>
 						<%= check_box_tag "album[photo_ids][]", p.id, @album.photo_ids.include?(p.id), id: dom_id(p), class: 'checkbox' %>
+						<% end %>
 						<%= label_tag dom_id(p), (image_tag processed?(p, :teeny), class: 'checkbox-photo') %>
 					</div>
-				<% end %>
 				<% end %>
 			</div>
 		<% end %>

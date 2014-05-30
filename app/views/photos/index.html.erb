@@ -1,6 +1,7 @@
 <h1 id="view_switch"><a href="#" id="show_photos" class="active">All photos</a> &bull; <a href="#" id="show_albums">All albums</a></h1>
 <div id="container">
   <section id="photos">
+    <% if !@photos.empty? %>
     <%= will_paginate @photos, param_name: 'photo_page' %>
     <% @photos.each do |photo| %>
       <div class="photo single">
@@ -31,7 +32,9 @@
     <% end %>
 
     <%= will_paginate @photos, param_name: 'photo_page' %>
-
+    <% else %>
+    <p>Unfortunately there are no photos yet.</p>
+    <% end %>
   </section>
   <section id="albums">
     <% if !@albums.empty? %>
