@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  $('#container').masonry({
-    itemSelector: '.photo'
-  });
+  // $('#container').masonry({
+  //   itemSelector: '.photo'
+  // });
   $(".fancybox").fancybox({
     titleShow: true
     /*afterShow: function() { 
