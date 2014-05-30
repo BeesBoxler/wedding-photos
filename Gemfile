@@ -56,3 +56,6 @@ gem 'carrierwave_backgrounder'
 gem 'exifr'
 
 gem 'hirefire-resource'
+
+# For JSON UI
+gem 'angularjs-rails'
