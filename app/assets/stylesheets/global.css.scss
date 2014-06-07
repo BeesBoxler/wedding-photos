@@ -315,3 +315,12 @@ div.photo img {
   max-width:250px;
   max-height:250px;
 }
+
+.photo .linkToUser {
+  text-decoration: none;
+  color: #fff;
+}
+
+.photo .linkToUser:hover {
+  text-decoration: underline;
+}
