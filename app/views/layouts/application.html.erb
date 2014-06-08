@@ -7,8 +7,34 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
+<!--[if lt IE 9]>
+ <div id="stopUsingIEWrap"></div>
+  <div id="stopUsingIE">
+    <div>
+      <h1>You are using a browser older than Internet Explorer 10</h1>
+      <p>To be able to use this website to its full potential, you must upgrade to Internet Explorer 10 or use a better browser.</p>
+      <span>If you don't or can't upgrade, you may still view others photos, however you can NOT upload photos.</span>
+      <a href="#" id="IEContinue">Continue</a>
+      <a href="http://www.microsoft.com/en-gb/download/details.aspx?id=40902&fa43d42b-25b5-4a42-fe9b-1634f450f5ee=True" id="IEUpgrade" target="_blank">Upgrade</a>
+      <img src="http://c.s-microsoft.com/en-gb/CMSImages/ie_symbol_clr_56x56.png?version=73aa5bf1-0743-11e7-8f71-718675c983bf" />
+    </div>
+  </div>
+  <script>
+    var cookieVal = readCookie('WantsToUseACrapBrowser');
+    if (cookieVal != "true") {
+      $('#stopUsingIE, #stopUsingIEWrap').show();
+    }
+    $('#IEContinue').click(function(){
+      $('#stopUsingIE, #stopUsingIEWrap').fadeOut();
+      document.cookie = "WantsToUseACrapBrowser=true; expires=31 Dec 2015 00:00:00 GMT; path=/;";
+    });
+  </script>
+<![endif]-->
 
   <header>
     <nav>
